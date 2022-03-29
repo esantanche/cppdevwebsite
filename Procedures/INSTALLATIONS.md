@@ -15,7 +15,8 @@ FIXME  this is to be redone because SMUI needs TypeScript
 
 ```
 
-Change to file /app/sveltekitapp/package.json
+Change to file /app/sveltekitapp/package.json.
+See line with "svelte-kit dev"
 
 ```json
 "scripts": {
@@ -32,7 +33,7 @@ When prompted:
 
 ```
 ✔ Which Svelte app template? › Skeleton project
-✔ Use TypeScript? … No 
+✔ Use TypeScript? … Yes
 ✔ Add ESLint for code linting? … Yes
 ✔ Add Prettier for code formatting? … No 
 ✔ Add Playwright for browser testing? … Yes

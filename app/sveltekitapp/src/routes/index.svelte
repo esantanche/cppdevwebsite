@@ -19,7 +19,7 @@
 test here
 
 <Button n:mousedown={handleClick}>
-	<Icon class="material-icons">thumb_up</Icon>
+	<!-- <Icon class="material-icons">thumb_up</Icon> -->
 	<Label>Click Me</Label>
 </Button>
 
@@ -29,3 +29,7 @@ test here
 {:else}
 		<span class="grayed">You haven't clicked the button.</span>
 {/if}
+
+
+<h1>Welcome to SvelteKit</h1>
+<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>

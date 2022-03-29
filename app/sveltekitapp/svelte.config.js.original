@@ -8,15 +8,7 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter(),
-		vite: {
-			server: {
-				hmr: {
-					protocol: 'ws',
-					port: 3001
-				}
-			}
-		}
+		adapter: adapter()
 	}
 };
 

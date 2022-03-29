@@ -1,17 +1,3 @@
-
-many procedurs
-
-
-npm init svelte@next my-app
-cd my-app
-npm install
-npm run dev
-
-
-the dockerfile wanted alpine 3.15.2
-nodejs in alpine 16.14.2-r0
-
-
 <script lang="ts">
 	import Button, { Label, Icon } from '@smui/button';
 	let clicked = 0;
