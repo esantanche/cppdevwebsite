@@ -37,3 +37,20 @@ When prompted:
 ```
 
 To start the development server see EVERYDAYPROCEDURES.md.
+
+## Svelte Material UI
+
+FIXME 
+
+npm install --save-dev @smui/button
+npm install --save-dev @smui/card
+npm i -D @smui/layout-grid
+npm i -D @smui/textfield
+npm i -D @smui/common
+# etc...
+
+npm install --save-dev smui-theme
+
+Create your theme files with smui-theme.
+
+npx smui-theme template src/theme
