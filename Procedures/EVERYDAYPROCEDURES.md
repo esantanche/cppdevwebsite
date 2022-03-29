@@ -10,3 +10,11 @@ This opens a bash shell in the container.
 sudo docker exec -i -t CppDevWebsite bash
 ```
 
+## Starting the development server
+
+In the container
+
+```bash
+[root@34753d1ec86e app]$ cd sveltekitapp/
+[root@34753d1ec86e sveltekitapp]$ npm run dev
+```

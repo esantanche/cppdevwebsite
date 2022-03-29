@@ -15,4 +15,10 @@ need to then create the container that will run the app.
 
 It's how to create the container.
 
+## INSTALLATIONS.md
 
+How to install SvelteKit, packages, Svelte material design library, etc.
+
+## UPDATES.md
+
+FIXME  
