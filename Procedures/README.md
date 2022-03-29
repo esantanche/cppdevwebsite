@@ -1,0 +1,18 @@
+# Procedures to use for this project
+
+This folder contains procedures to run to perform many tasks.
+
+There is a separate file for each type of procedure.
+
+Let's see them.
+
+## CREATINGDOCKERIMAGE.md
+
+This file contains instructions about how to create the Docker image I
+need to then create the container that will run the app.
+
+## CREATINGCONTAINER.md
+
+It's how to create the container.
+
+
