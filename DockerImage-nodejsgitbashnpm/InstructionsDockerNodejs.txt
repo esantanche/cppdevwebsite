@@ -1,0 +1,7 @@
+Building the image:
+
+(you can update an image when you change scripts and dockerfile. 
+Just docker will create another image and keep the older one for existing containers to use)
+sudo docker build -t nodejsgitbashnpm .
+
+
