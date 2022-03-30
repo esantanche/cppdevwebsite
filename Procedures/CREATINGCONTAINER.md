@@ -1,5 +1,7 @@
 # Creating container
 
+(Eventually I didn't use Docker)
+
 This command creates the container calling it CppDevWebsite and using the image nodejs-16-14-2-alpine-3-15-2.
 
 ```bash
