@@ -27,6 +27,7 @@
     "@rollup/plugin-url": "^5.0.0",
     "@smui/button": "^6.0.0-beta.15",
     "@smui/card": "^6.0.0-beta.15",
+    "@smui/layout-grid": "^6.0.0-beta.15",
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
