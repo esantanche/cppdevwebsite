@@ -3,11 +3,22 @@
 @use '@material/theme/color-palette';
 
 // Svelte Colors!
+//   $background: #fff,
+// $surface: #fff,
+
+// FIXME  do I need these variables?
+
+$small-component-radius: 20px;
+$medium-component-radius: 20px;
+$large-component-radius: 20px;
+
+// FIXME  I could define my variables with my standard colours for example
+
 @use '@material/theme/index' as theme with (
   $primary: #ff3e00,
   $secondary: #676778,
-  $surface: #fff,
-  $background: #fff,
+  $surface: rgb(216, 162, 14),
+  $background: rgb(255, 255, 255),
   $error: color-palette.$red-900
 );
 

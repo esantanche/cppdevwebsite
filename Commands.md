@@ -3,29 +3,13 @@
 
 FIXME these have to be adapted to the new project
 
-
-# Installing Sapper in the container (only once per container)
-
-```bash
-[root@e01f42592d53 app]$ npx degit "sveltejs/sapper-template#rollup" sapperapp
-[root@e01f42592d53 app]$ cd sapperapp/
-[root@e01f42592d53 sapperapp]$ npm install
-[root@e01f42592d53 sapperapp]$ npm run dev
-```
+# To update sapper
 
 Consider that I updated sapper later. It went to version 0.27.16.
 
 ```bash
 [root@e01f42592d53 sapperapp]$ npm update sapper
 ```
-
-# To run the dev server
-
-```bash
-[root@e01f42592d53 app]$ cd sapperapp/
-[root@e01f42592d53 sapperapp]$ npm run dev
-```
-
 
 
 # To build the project
@@ -56,23 +40,3 @@ Now there is a service defined in /etc/systemd/system/leadershipcoachfortechcom.
 
 You just have to run "service leadershipcoachfortechcom restart"
 
-
-# THIS STUFF IS DONE, DELETE LATER
-
-This is to be done once only.
-
-```bash
-sudo docker run -v /home/esantanche/SwProjects/leadershipcoachfortech-svelte-edition/:/app -w /app -t -d -p 3001:3000 --name=LcftSvelteEdition nodejsgitbashnpm
-```
-
-* The option -t allocates a terminal to the container so that it can run a shell. Without this option the container tries to start but fails because the shell needs a terminal.
-* The option -d means that the container starts detached. I will have to open a shell on it later.
-* The internal port 3000 will be mapped to port 3001 on the host machine. I will be able to see the app working on http://localhost:3001/
-
-
-
-# To run a bash on the container
-
-```bash
-sudo docker exec -i -t LcftSvelteEdition bash
-```

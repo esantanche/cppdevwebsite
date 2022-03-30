@@ -14,9 +14,6 @@ I'm using Sapper because SvelteKit has many problems.
 
 ## Svelte Material UI
 
-FIXME to redo for sapper
-
-
 ```bash
 [esantanche@luna sapperapp]$ npm install --save-dev @smui/card
 ```
@@ -25,9 +22,17 @@ There will be more packages to install, one for each SMUI component I need to us
 
 You will find the full list in /app/sapperapp/package.json
 
+There will be something like this:
 
-FIXME  installing the theme
+```json
+   "@smui/button": "^6.0.0-beta.15",
+   "@smui/card": "^6.0.0-beta.15",
+   "@smui/common": "^6.0.0-beta.15",
+   "@smui/layout-grid": "^6.0.0-beta.15",
+   "@smui/textfield": "^6.0.0-beta.15",
+```
 
+Installing the theme
 
 ```bash
 [esantanche@luna sapperapp]$ npm install --save-dev smui-theme
@@ -43,36 +48,14 @@ scripts": {
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
-    "prepare": "smui-theme compile build/smui.css -i src/theme"
+    "prepare": "smui-theme compile static/smui.css -i src/theme"
   },
 ```
 
-Creating CSS.
+Creating CSS from SCSS.
 
 ```bash
-[esantanche@luna sapperapp]$ mkdir build
 [esantanche@luna sapperapp]$ npm run prepare
-```
-
-```bash
-[root@34753d1ec86e sveltekitapp]$ npm install --save-dev @smui/button
-[root@34753d1ec86e sveltekitapp]$ npm install --save-dev @smui/card
-[root@34753d1ec86e sveltekitapp]$ npm install --save-dev @smui/layout-grid
-[root@34753d1ec86e sveltekitapp]$ npm install --save-dev @smui/textfield
-[root@34753d1ec86e sveltekitapp]$ npm install --save-dev @smui/common
-[root@34753d1ec86e sveltekitapp]$ npm install --save-dev smui-theme
-[root@34753d1ec86e sveltekitapp]$ npx smui-theme template src/theme
-```
-
-
-There will be something like this:
-
-```json
-   "@smui/button": "^6.0.0-beta.15",
-   "@smui/card": "^6.0.0-beta.15",
-   "@smui/common": "^6.0.0-beta.15",
-   "@smui/layout-grid": "^6.0.0-beta.15",
-   "@smui/textfield": "^6.0.0-beta.15",
 ```
 
 ## SvelteKit
