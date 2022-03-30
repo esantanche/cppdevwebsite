@@ -1,3 +1,9 @@
+$small-component-radius: 20px;
+$medium-component-radius: 20px;
+$large-component-radius: 20px;
+
+// @use "@material/shape";
+
 @use 'sass:color';
 
 @use '@material/theme/color-palette';
@@ -8,23 +14,37 @@
 
 // FIXME  do I need these variables?
 
-$small-component-radius: 20px;
-$medium-component-radius: 20px;
-$large-component-radius: 20px;
 
 // FIXME  I could define my variables with my standard colours for example
+
+$pastelgreen: #C1E1C1;
 
 @use '@material/theme/index' as theme with (
   $primary: #ff3e00,
   $secondary: #676778,
-  $surface: rgb(216, 162, 14),
-  $background: rgb(255, 255, 255),
+  $surface: #FAC898,
+  $background: $pastelgreen,
   $error: color-palette.$red-900
 );
 
+@use '@material/elevation/mdc-elevation';
+
+
+
+// @use "@material/theme" with (
+//   $primary: #fcb8ab,
+//   $secondary: #feeae6,
+//   $on-primary: #442b2d,
+//   $on-secondary: #442b2d,
+// );
+// @use "@material/card/mdc-card";
+
+//   background-color: theme.$surface;
+
+
 html,
 body {
-  background-color: theme.$surface;
+  background-color: theme.$background;
   color: theme.$on-surface;
 }
 
@@ -33,4 +53,9 @@ a {
 }
 a:visited {
   color: color.scale(#40b3ff, $lightness: -35%);
+}
+
+// This changes the radius of the border of the cards
+.mdc-card {
+  --mdc-shape-medium: 6px;
 }

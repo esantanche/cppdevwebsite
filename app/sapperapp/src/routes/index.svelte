@@ -5,10 +5,15 @@
 
 	import Card, { Content, Actions } from '@smui/card';
 
+	import Button, { Label } from '@smui/button';
+
 	// import Content from '@smui/content';
 </script>
 
 <style>
+
+/* FIXME  do i need this stuff? */
+
 	h1, figure, p {
 		text-align: center;
 		margin: 0 auto;
@@ -55,8 +60,20 @@
 
 <p><strong>Try editing  ermFIXMea  this file (src/routes/index.svelte) to test live reloading.</strong></p>
 
+<div class="mdc-elevation--z{2} flexy-boy">
+	<Card>
+		<Content>elevated <code>Content</code>.</Content>
+	</Card>
+</div>
+
+<div style="height: 30px"></div>
+
 <Card>
 	<Content>You can also use <code>Content</code>.</Content>
 </Card>
 
 <Card variant="outlined" padded>An outlined, padded card.</Card>
+
+<Button on:click={() => { console.log("clicked") } }>
+    <Label>Default</Label>
+</Button>
