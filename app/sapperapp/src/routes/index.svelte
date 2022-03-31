@@ -1,23 +1,25 @@
-<script>
-	import successkid from 'images/successkid.jpg';
-
-	// import Card from '@smui/card';
-
-	import Card, { Content, Actions } from '@smui/card';
+<script lang="ts">
+	
+	import Card, {
+    				Content,
+    				PrimaryAction,
+    				Media,
+    				MediaContent,
+  			} from '@smui/card';
 
 	import Button, { Label } from '@smui/button';
 
-
 	import StandardLink from "../components/links/StandardLink.svelte";
 
-	// import Content from '@smui/content';
+	import LayoutGrid, { Cell } from '@smui/layout-grid';
+
 </script>
 
 <style>
 
 /* FIXME  do i need this stuff? */
 
-	h1, figure, p {
+	/* h1, p {
 		text-align: center;
 		margin: 0 auto;
 	}
@@ -27,27 +29,17 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
-	}
+	} */
 
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
+	/* p {
 		margin: 1em auto;
-	}
+	} */
 
-	@media (min-width: 480px) {
+	/* @media (min-width: 480px) {
 		h1 {
 			font-size: 4em;
 		}
-	}
+	} */
 </style>
 
 <svelte:head>
@@ -56,10 +48,6 @@
 
 <h1>Great success!</h1>
 
-<figure>
-	<img alt="Success Kid" src="{successkid}">
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
 
 <p><strong>Try editing  ermFIXMea  this file (src/routes/index.svelte) to test live reloading.</strong></p>
 
@@ -80,22 +68,32 @@
 
 <div style="height: 30px"></div>
 
-<Card variant="outlined" padded>
-	<Media class="card-media-16x9" aspectRatio="16x9">
-        <MediaContent>
-          <h2
-            class="mdc-typography--headline6"
-            style="color: #fff; position: absolute; bottom: 16px; left: 16px; margin: 0;"
-          >
-            A card with 16x9 media.
-          </h2>
-        </MediaContent>
-      </Media>
-      <Content style="color: #888;">Here's some gray text down here.</Content>
-
-
-</Card>
+<StandardLink to={"http://www.ibm.com"}>
+	<Card variant="outlined">
+		<Media class="card-media-16x9" aspectRatio="16x9">
+			<MediaContent>
+			<img height="100%" width="100%" style="border-radius: 10px" src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg" alt="testing">
+			</MediaContent>
+		</Media>
+		<Button on:click={() => { console.log("clicked") } }>
+			<Label>click me</Label>
+		</Button>
+		<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
+	</Card>
+</StandardLink>
 
 <Button on:click={() => { console.log("clicked") } }>
     <Label>Default</Label>
 </Button>
+
+<LayoutGrid>
+	{#each Array(9) as _unused, i}
+	  <Cell>
+		<div class="demo-cell">Cell {i + 1}</div>
+	  </Cell>
+	{/each}
+  </LayoutGrid>
+
+<!-- <MediaContent>
+	<img height="100%" width="100%" src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg" alt="testing">
+  </MediaContent> -->
