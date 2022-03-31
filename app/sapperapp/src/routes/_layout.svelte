@@ -1,7 +1,11 @@
 <script>
-	import Nav from '../components/Nav.svelte';
+	// import Nav from '../components/Nav.svelte';
 
-	export let segment;
+	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
+
+import IconButton from '@smui/icon-button';
+
+	//export let segment;
 </script>
 
 <style>
@@ -15,7 +19,27 @@
 	}
 </style>
 
-<Nav {segment}/>
+<TopAppBar
+      variant="static"
+      color="primary"
+    >
+      <Row>
+        <Section>
+			<IconButton class="material-icons">menu</IconButton>
+          <!-- <IconButton class="material-icons">menu</IconButton>
+          <Title>Static</Title> -->
+		  <Title>section in top bar</Title>
+        </Section>
+        <Section align="end" toolbar>
+          <IconButton class="material-icons" aria-label="Download">file_download</IconButton>
+          <IconButton class="material-icons" aria-label="Print this page">print</IconButton>
+          <IconButton class="material-icons" aria-label="Bookmark this page">bookmark</IconButton>
+        </Section>
+      </Row>
+    </TopAppBar>
+
+
+<!-- <Nav {segment}/> -->
 
 <main>
 	<slot></slot>

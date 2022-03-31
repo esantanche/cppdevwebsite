@@ -13,6 +13,10 @@
 
 	import LayoutGrid, { Cell } from '@smui/layout-grid';
 
+	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
+
+	import IconButton from '@smui/icon-button';
+
 </script>
 
 <style>
@@ -43,13 +47,41 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Emanuele Santanche</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<TopAppBar
+      variant="static"
+      color="primary"
+    >
+      <Row>
+        <Section>
+			<IconButton class="material-icons">menu</IconButton>
+          <!-- <IconButton class="material-icons">menu</IconButton>
+          <Title>Static</Title> -->
+		  <Title>section in top bar</Title>
+        </Section>
+        <Section align="end" toolbar>
+          <IconButton class="material-icons" aria-label="Download">file_download</IconButton>
+          <IconButton class="material-icons" aria-label="Print this page">print</IconButton>
+          <IconButton class="material-icons" aria-label="Bookmark this page">bookmark</IconButton>
+        </Section>
+      </Row>
+    </TopAppBar>
+
+<h1>Emanuele Santanche</h1>
+
+<h2>C++ code crafted here</h2>
+
+<p>Emanuele Santanche</p>
+
+<p>C++ code crafted here</p>
+
+<p style="font-family: 'Bangers', cursive; font-size: 40px">We developers invented Agile</p>
+
+<p style="font-family: 'Comic Neue', cursive; font-size: 40px">We developers invented Agile</p>
 
 
-<p><strong>Try editing  ermFIXMea  this file (src/routes/index.svelte) to test live reloading.</strong></p>
 
 <div class="mdc-elevation--z{2} flexy-boy">
 	<Card>
@@ -58,6 +90,7 @@
 </div>
 
 <div style="height: 30px"></div>
+
 
 
 <StandardLink to={"http://www.ibm.com"}>
@@ -87,12 +120,32 @@
 </Button>
 
 <LayoutGrid>
-	{#each Array(9) as _unused, i}
-	  <Cell>
-		<div class="demo-cell">Cell {i + 1}</div>
-	  </Cell>
-	{/each}
-  </LayoutGrid>
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		<div class="demo-cell" style="height: 80px;">
+		  cell 1
+		</div>
+	</Cell>
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		<div class="demo-cell" style="height: 80px;">
+		  cell 2
+		</div>
+	</Cell>
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		<div class="demo-cell" style="height: 80px;">
+		  cell 3
+		</div>
+	</Cell>
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		<div class="demo-cell" style="height: 80px;">
+		  cell 4
+		</div>
+	</Cell>
+	
+</LayoutGrid>
 
 <!-- <MediaContent>
 	<img height="100%" width="100%" src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg" alt="testing">
