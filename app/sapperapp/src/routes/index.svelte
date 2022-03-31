@@ -13,9 +13,16 @@
 
 	import LayoutGrid, { Cell } from '@smui/layout-grid';
 
-	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
+	// import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
 
-	import IconButton from '@smui/icon-button';
+	// import IconButton from '@smui/icon-button';
+
+	import CoverFittingImage from "../components/images/CoverFittingImage.svelte";
+
+	import SeparatorPane from "../components/panes/SeparatorPane.svelte";
+import HeadlineText from '../components/texts/HeadlineText.svelte';
+
+
 
 </script>
 
@@ -50,24 +57,6 @@
 	<title>Emanuele Santanche</title>
 </svelte:head>
 
-<TopAppBar
-      variant="static"
-      color="primary"
-    >
-      <Row>
-        <Section>
-			<IconButton class="material-icons">menu</IconButton>
-          <!-- <IconButton class="material-icons">menu</IconButton>
-          <Title>Static</Title> -->
-		  <Title>section in top bar</Title>
-        </Section>
-        <Section align="end" toolbar>
-          <IconButton class="material-icons" aria-label="Download">file_download</IconButton>
-          <IconButton class="material-icons" aria-label="Print this page">print</IconButton>
-          <IconButton class="material-icons" aria-label="Bookmark this page">bookmark</IconButton>
-        </Section>
-      </Row>
-    </TopAppBar>
 
 <h1>Emanuele Santanche</h1>
 
@@ -105,7 +94,8 @@
 	<Card variant="outlined">
 		<Media class="card-media-16x9" aspectRatio="16x9">
 			<MediaContent>
-			<img height="100%" width="100%" style="border-radius: 10px" src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg" alt="testing">
+				<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg"
+													   alt="now just testing"/>
 			</MediaContent>
 		</Media>
 		<Button on:click={() => { console.log("clicked") } }>
@@ -114,6 +104,14 @@
 		<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
 	</Card>
 </StandardLink>
+
+<SeparatorPane/>
+
+<div style="font-size: 4vw">Headline 1</div>
+
+<HeadlineText>hhusdhuahda</HeadlineText>
+
+<!-- FIXME  about texts, maybe the ones SMUI provides are responsive -->
 
 <Button on:click={() => { console.log("clicked") } }>
     <Label>Default</Label>

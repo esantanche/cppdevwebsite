@@ -8,6 +8,8 @@ import IconButton from '@smui/icon-button';
 	//export let segment;
 </script>
 
+<!-- FIXME  this will be needed in the header, so it may become its own component -->
+
 <style>
 	main {
 		position: relative;
@@ -19,24 +21,6 @@ import IconButton from '@smui/icon-button';
 	}
 </style>
 
-<TopAppBar
-      variant="static"
-      color="primary"
-    >
-      <Row>
-        <Section>
-			<IconButton class="material-icons">menu</IconButton>
-          <!-- <IconButton class="material-icons">menu</IconButton>
-          <Title>Static</Title> -->
-		  <Title>section in top bar</Title>
-        </Section>
-        <Section align="end" toolbar>
-          <IconButton class="material-icons" aria-label="Download">file_download</IconButton>
-          <IconButton class="material-icons" aria-label="Print this page">print</IconButton>
-          <IconButton class="material-icons" aria-label="Bookmark this page">bookmark</IconButton>
-        </Section>
-      </Row>
-    </TopAppBar>
 
 
 <!-- <Nav {segment}/> -->

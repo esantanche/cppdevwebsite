@@ -1,12 +1,16 @@
-$small-component-radius: 20px;
-$medium-component-radius: 20px;
-$large-component-radius: 20px;
+
+
+// $small-component-radius: 20px;
+// $medium-component-radius: 20px;
+// $large-component-radius: 20px;
 
 // @use "@material/shape";
 
 @use 'sass:color';
 
 @use '@material/theme/color-palette';
+
+// @material/typography/mdc-typography
 
 // Svelte Colors!
 //   $background: #fff,
@@ -29,6 +33,9 @@ $darkred: color-palette.$red-900;
   $background: white,
   $error: color-palette.$red-900
 );
+
+@use '@material/typography/mdc-typography';
+
 
 @use '@material/elevation/mdc-elevation';
 
