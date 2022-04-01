@@ -96,6 +96,8 @@ what is c++ for?  -- maybe also in the menU?
 about me is only in the menu instead
 -->
 
+<!-- FIXME  maybe instead of what is c++ for I write about the tech I use? so that I can add Rust? dunno -->
+
 <LayoutGrid>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
@@ -110,7 +112,7 @@ about me is only in the menu instead
 						</MediaContent>
 					</Media>
 					<Button on:click={() => { console.log("clicked") } }>
-						<Label>click me</Label>
+						<Label>How I work</Label>
 					</Button>
 					<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
 				</StandardCard>
@@ -131,7 +133,7 @@ about me is only in the menu instead
 						</MediaContent>
 					</Media>
 					<Button on:click={() => { console.log("clicked") } }>
-						<Label>click me</Label>
+						<Label>What is C++ for?</Label>
 					</Button>
 					<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
 				</StandardCard>
@@ -142,8 +144,24 @@ about me is only in the menu instead
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
 		
-		  cell 3
+		  <StandardLink to={"/articles/problem-solving/1"}>
+	
+			<StandardCard>
+				<Media class="card-media-16x9" aspectRatio="16x9">
+					<MediaContent>
+						<CoverFittingImage src="topics-alex-knight-tech-watch-unsplash-600x400.jpg"
+										   alt="Problem solving"/>
+					</MediaContent>
+				</Media>
+				<Button on:click={() => { console.log("clicked") } }>
+					<Label>Problem solving</Label>
+				</Button>
+			</StandardCard>
+			
+		</StandardLink>
+
 		
+
 	</Cell>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>

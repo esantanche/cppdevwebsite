@@ -91,6 +91,8 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 
 </HeadlineText>
 
+<!-- FIXME  this needs to be fixed -->
+
 <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
 
     {@html dataBundle.article.body}

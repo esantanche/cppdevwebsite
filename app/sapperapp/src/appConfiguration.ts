@@ -34,7 +34,7 @@
     topicURL2topicLookupTable: {
         "success-stories": "Success stories",
         "testimonials": "Testimonials",
-        "tech-watch": "Tech watch",
+        "problem-solving": "Tech watch",
         "leadership": "Leadership",
         "services": "Services"
     },

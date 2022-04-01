@@ -2,6 +2,7 @@
 	// import Nav from '../components/Nav.svelte';
 
 	import {APP_CONFIGURATION} from '../appConfiguration';
+import StandardFooter from '../components/footers/StandardFooter.svelte';
 import StandardHeader from '../components/headers/StandardHeader.svelte';
 
 
@@ -17,7 +18,7 @@ import StandardHeader from '../components/headers/StandardHeader.svelte';
 		position: relative;
 		max-width: var(--max-width);
 		background-color: white;
-		padding: 2em;
+		/* padding: 2em; */
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
@@ -30,7 +31,7 @@ import StandardHeader from '../components/headers/StandardHeader.svelte';
 <main style="--max-width: {APP_CONFIGURATION.maxwidthforcontent};"  >
 	<StandardHeader />
 	<slot></slot>
-	footer here
+	<StandardFooter />
 </main>
 
 <!-- FIXME  footer to do -->

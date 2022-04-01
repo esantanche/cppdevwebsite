@@ -136,6 +136,8 @@ import CoverFittingImage from "../../components/images/CoverFittingImage.svelte"
 
 <LayoutGrid>
 
+<!-- FIXME  if an article has a title on two lines, space is needed above and below -->
+
 {#each dataBundle.articles as article}
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>

@@ -38,6 +38,8 @@ help search engines to index the item's page.
 
 <svelte:window bind:innerWidth={screenWidth} />
 
+<!-- FIXME  I'm usinig this but it needs a lot of reowrk  -->
+
 <div class="narrationtext" style="--font-family: {APP_CONFIGURATION.fontFamily};
                                   --text-color: {color ? color : APP_CONFIGURATION.defaultColorsTable['WHITESHADE']};
                                   --font-size: {fontSize(screenWidth, APP_CONFIGURATION)};

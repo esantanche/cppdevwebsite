@@ -30,9 +30,11 @@ import StandardLink from "../links/StandardLink.svelte";
 <TopAppBar variant="static" color="secondary">
   <Row>
     <Section>
-      <Title>Emanuele Santanche</Title>
+      <StandardLink to="/">
+        <Title>Emanuele Santanche</Title>
+      </StandardLink>
     </Section>
-    <Section align="end" toolbar>
+    <Section align="end">
       <div style="min-width: 70px;">
         <IconButton class="material-icons" on:click={() => menu.setOpen(true)}>
           menu
