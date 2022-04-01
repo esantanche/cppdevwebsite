@@ -1,4 +1,15 @@
-<script>
+<script lang="ts">
+    
+        import { MenuComponentDev } from '@smui/menu';
+        import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
+
+import IconButton from '@smui/icon-button';
+
+import Menu from '@smui/menu';
+
+
+import List, { Item, Separator, Text } from '@smui/list';
+
     // import MenuButtonPane from "../panes/MenuButtonPane.svelte";
     // import StandardIcon from "../icons/StandardIcon.svelte";
     import {APP_CONFIGURATION} from '../../appConfiguration';
@@ -28,8 +39,46 @@
 
     }
 
+   
+
+  let menu: MenuComponentDev;
+
+  let clicked = 'nothing yet';
+
 </script>
 
+<TopAppBar
+      variant='static'
+      color='secondary'>
+      <Row>
+        <Section>
+          <Title>Emanuele Santanche</Title>
+        </Section>
+        <Section align="end" toolbar>
+            <IconButton class="material-icons" on:click={() => menu.setOpen(true)}>menu</IconButton>
+            <Menu bind:this={menu}>
+                <List>
+                  <Item on:SMUI:action={() => (clicked = 'Cut')}>
+                    <Text>Cut</Text>
+                  </Item>
+                  <Item on:SMUI:action={() => (clicked = 'Copy')}>
+                    <Text>Copy</Text>
+                  </Item>
+                  <Item on:SMUI:action={() => (clicked = 'Paste')}>
+                    <Text>Paste</Text>
+                  </Item>
+                  <Separator />
+                  <Item on:SMUI:action={() => (clicked = 'Delete')}>
+                    <Text>Delete</Text>
+                  </Item>
+                </List>
+              </Menu>
+        </Section>
+      </Row>
+</TopAppBar>
+
+
+<!-- 
 {#if menuButtonVisible}
 
     <ContentPane noPadding={true}
@@ -43,9 +92,9 @@
     </ContentPane>
 
 {:else}
-    <!-- <StandardMenu on:close={onclose}/> -->
+     <StandardMenu on:close={onclose}/> 
     <div>menuButtonVisible is false</div>
-{/if}
+{/if} -->
 
 
 <!-- <FullWidthPane noPadding={true}

@@ -13,16 +13,14 @@
 
 	import LayoutGrid, { Cell } from '@smui/layout-grid';
 
-	// import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
 
 	// import IconButton from '@smui/icon-button';
 
 	import CoverFittingImage from "../components/images/CoverFittingImage.svelte";
 
 	import SeparatorPane from "../components/panes/SeparatorPane.svelte";
-import HeadlineText from '../components/texts/HeadlineText.svelte';
-
-
+	
+	import HeadlineText from '../components/texts/HeadlineText.svelte';
 
 </script>
 

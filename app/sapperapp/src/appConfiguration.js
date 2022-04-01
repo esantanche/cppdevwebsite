@@ -13,7 +13,7 @@
     maxwidthforcontent: "60em",
     defaultColorsTable: {
         "PASTELGREEN": "#C1E1C1",
-        "WHITESHADE": "#F9F9FB",
+        "PASTELORANGE": "#FAC898",
         "DARKERWHITESHADE": "#ECF2F2",
         "LIGHTGREY": "#777677",
         "DARKGREY": "#264A60",

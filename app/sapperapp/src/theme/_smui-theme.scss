@@ -7,12 +7,16 @@
 // FIXME  I could define my variables with my standard colours for example
 
 $pastelgreen: #C1E1C1;
+$pastelorange: #FAC898;
 $darkred: color-palette.$red-900;
+
+// $secondary: #676778,
+
 
 @use '@material/theme/index' as theme with (
   $primary: $darkred,
-  $secondary: #676778,
-  $surface: #FAC898,
+  $secondary: $pastelgreen,
+  $surface: $pastelorange,
   $background: white,
   $error: color-palette.$red-900
 );
