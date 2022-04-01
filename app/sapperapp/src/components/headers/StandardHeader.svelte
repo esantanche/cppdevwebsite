@@ -24,6 +24,8 @@ import StandardLink from "../links/StandardLink.svelte";
 
 <!-- FIXME  why does the header have a space above it? -->
 
+<!-- FIXME  my name sjhould be clickable and go to the home -->
+
 
 <TopAppBar variant="static" color="secondary">
   <Row>

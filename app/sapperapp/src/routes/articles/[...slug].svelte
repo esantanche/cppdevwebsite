@@ -1,5 +1,5 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
+@file FIXME 87gts455f Utility function to convert a title to a slug.
 The title belongs to an item. The slug is what we add to the url of the item to
 help search engines to index the item's page.
 -->
@@ -7,7 +7,7 @@ help search engines to index the item's page.
 <script context="module">
 
 	import {APP_CONFIGURATION} from '../../appConfiguration';
-	// import {titleToSlug} from '../../helpers/title_to_slug';
+	import {titleToSlug} from '../../helpers/title_to_slug';
 	// import {backgroundColor} from '../../helpers/background_color';
 	// import {error_message_from_error} from "../../helpers/errorMessages";
 	// import * as Sentry from '@sentry/browser';
@@ -20,6 +20,8 @@ help search engines to index the item's page.
 			page = 1;
 		else
 			page = parseInt(page);
+
+		// FIXME  topics may need change, like tech-watch, which is now different
 
 		let topicForRestApi = APP_CONFIGURATION.topicURL2topicLookupTable[topic];
 
@@ -62,22 +64,40 @@ help search engines to index the item's page.
 
 <script>
 	// import WideContentPane from "../../components/panes/WideContentPane.svelte";
-	// import StandardLink from "../../components/links/StandardLink.svelte";
-	// import HeadlineText from "../../components/texts/HeadlineText.svelte";
+	import StandardLink from "../../components/links/StandardLink.svelte";
+	import HeadlineText from "../../components/texts/HeadlineText.svelte";
+	import StandardCard from '../../components/cards/StandardCard.svelte';
+
+	import Card, {
+    				Content,
+    				PrimaryAction,
+    				Media,
+    				MediaContent,
+  			} from '@smui/card';
 	// import ColumnsPane from "../../components/panes/ColumnsPane.svelte";
 	// import ColoredPane from "../../components/panes/ColoredPane.svelte";
 	// import OneThirdHeightPane from "../../components/panes/OneThirdHeightPane.svelte";
 	// import CoverFittingImage from "../../components/images/CoverFittingImage.svelte";
 	// import CentredTextBox from "../../components/boxes/CentredTextBox.svelte";
-	// import CenteringPane from "../../components/panes/CenteringPane.svelte";
+	import CenteringPane from "../../components/panes/CenteringPane.svelte";
 	// import MarginTopPane from "../../components/panes/MarginTopPane.svelte";
-	// import SeparatorPane from "../../components/panes/SeparatorPane.svelte";
+	import SeparatorPane from "../../components/panes/SeparatorPane.svelte";
+// import LayoutGrid from "@smui/layout-grid/src/LayoutGrid.svelte";
+
+import Button, { Label } from '@smui/button';
+
+
+import LayoutGrid, { Cell } from '@smui/layout-grid';
+
+import CoverFittingImage from "../../components/images/CoverFittingImage.svelte";
+
 	// import StandardButton from "../../components/buttons/StandardButton.svelte";
 	// import FullWidthPane from "../../components/panes/FullWidthPane.svelte";
 
 	export let dataBundle;
 
 	let screenWidth;
+     
 
 	// let articles_pairs;
 
@@ -110,7 +130,65 @@ help search engines to index the item's page.
 	<title>Emanuele Santanche, {APP_CONFIGURATION.topicURL2topicLookupTable[dataBundle.topic]}</title>
 </svelte:head>
 
+<SeparatorPane />
 
+<HeadlineText>{APP_CONFIGURATION.topicURL2topicLookupTable[dataBundle.topic]}</HeadlineText>
+
+<LayoutGrid>
+
+{#each dataBundle.articles as article}
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		
+		<StandardLink to={"/article/" + article.nid + "/" + titleToSlug(article.title)}>
+
+			<StandardCard>
+				<Media class="card-media-16x9" aspectRatio="16x9">
+					<MediaContent>
+						<CoverFittingImage src={APP_CONFIGURATION.backendUrl + article.field_image}
+										   alt={article.title}/>
+					</MediaContent>
+				</Media>
+				<Button on:click={() => { console.log("clicked") } }>
+					<Label>{article.title}</Label>
+				</Button>
+				
+			</StandardCard>
+			
+		</StandardLink>
+	
+	</Cell>
+
+{/each}
+
+</LayoutGrid>
+
+{#if morePages(dataBundle.page, dataBundle.count, APP_CONFIGURATION.fetchPageSize)}
+
+	<CenteringPane>
+			<StandardLink to={"/articles/" + dataBundle.topic + "/" + (dataBundle.page + 1)}>
+				<!-- <Button>Next</Button> -->
+
+				<Button variant="outlined">
+					<Label>Next</Label>
+				  </Button>
+			</StandardLink>
+		</CenteringPane>
+
+{/if} 
+
+<!-- {#if morePages(dataBundle.page, dataBundle.count, APP_CONFIGURATION.fetchPageSize)}
+
+	<CenteringPane>
+		<MarginTopPane>
+			<StandardLink to={"/articles/" + dataBundle.topic + "/" + (dataBundle.page + 1)}>
+				<StandardButton>Next</StandardButton>
+			</StandardLink>
+		</MarginTopPane>
+		<SeparatorPane size="short" />
+	</CenteringPane>
+
+{/if} -->
 
 <!-- <svelte:window bind:innerWidth={screenWidth} /> -->
 
