@@ -15,9 +15,9 @@ comic is useful
 <script>
     // import { APP_CONFIGURATION } from '../../appConfiguration';
 
-    export let color = undefined;
-    export let large = undefined;
-    export let comic = undefined;
+    // export let color = undefined;
+    // export let large = undefined;
+    // export let comic = undefined;
 
     
 
