@@ -7,6 +7,8 @@ help search engines to index the item's page.
 This is a 100vw pane.
 -->
 
+<!-- FIXME  do I need this component? -->
+
 <script>
     export let backgroundColor = undefined;
     export let shortPadding = false;

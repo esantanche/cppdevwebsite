@@ -12,6 +12,15 @@ I'm using Sapper because SvelteKit has many problems.
 
 ```
 
+## Setting up TypeScript for Sapper
+
+```bash
+[esantanche@luna sapperapp]$ node scripts/setupTypeScript.js
+[esantanche@luna sapperapp]$ npm install
+[esantanche@luna sapperapp]$ npm run build
+
+```
+
 ## Svelte Material UI
 
 ```bash

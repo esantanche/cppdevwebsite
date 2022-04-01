@@ -21,128 +21,135 @@
 	import SeparatorPane from "../components/panes/SeparatorPane.svelte";
 	
 	import HeadlineText from '../components/texts/HeadlineText.svelte';
+import StandardCard from '../components/cards/StandardCard.svelte';
 
 </script>
 
 <style>
 
-/* FIXME  do i need this stuff? */
-
-	/* h1, p {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	} */
-
-	/* p {
-		margin: 1em auto;
-	} */
-
-	/* @media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	} */
 </style>
 
 <svelte:head>
 	<title>Emanuele Santanche</title>
 </svelte:head>
 
+<SeparatorPane />
 
-<h1>Emanuele Santanche</h1>
+<HeadlineText>Emanuele Santanche</HeadlineText>
+<!-- <h1>Emanuele Santanche</h1> -->
 
-<h2>C++ code crafted here</h2>
+<SeparatorPane />
 
-<p>Emanuele Santanche</p>
+<!-- <HeadlineText large={true}>C++ code crafted here</HeadlineText> -->
 
-<p>C++ code crafted here</p>
+<HeadlineText>C++ code crafted here</HeadlineText>
 
-<p style="font-family: 'Bangers', cursive; font-size: 40px">We developers invented Agile</p>
+<SeparatorPane />
 
-<p style="font-family: 'Comic Neue', cursive; font-size: 40px">We developers invented Agile</p>
+<HeadlineText comic={true}>We developers invented Agile</HeadlineText>
+
+<SeparatorPane />
 
 
+<!-- <StandardCard>
 
-<div class="mdc-elevation--z{2} flexy-boy">
 	<Card>
-		<Content>elevated <code>Content</code>.</Content>
+		<Content>elevafreewrferted <code>Contsdfsdfent</code>.</Content>
 	</Card>
-</div>
-
-<div style="height: 30px"></div>
-
-
-
+</StandardCard> -->
+<!-- 
 <StandardLink to={"http://www.ibm.com"}>
 <Card>
 	<Content>You can also use <code>Content</code>.</Content>
 </Card>
-</StandardLink>
+</StandardLink> -->
 
 <div style="height: 30px"></div>
 
-<StandardLink to={"http://www.ibm.com"}>
-	<Card variant="outlined">
+<!-- <StandardLink to={"http://www.ibm.com"}>
+	
+	<StandardCard>
 		<Media class="card-media-16x9" aspectRatio="16x9">
 			<MediaContent>
 				<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg"
-													   alt="now just testing"/>
+													alt="now just testing"/>
 			</MediaContent>
 		</Media>
 		<Button on:click={() => { console.log("clicked") } }>
 			<Label>click me</Label>
 		</Button>
-		<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
-	</Card>
-</StandardLink>
+		 <Content style="color: #888;">Here's some gray text down here.</Content>
+	</StandardCard>
+	
+</StandardLink> -->
 
 <SeparatorPane/>
-
-<div style="font-size: 4vw">Headline 1</div>
-
-<HeadlineText>hhusdhuahda</HeadlineText>
-
-<!-- FIXME  about texts, maybe the ones SMUI provides are responsive -->
 
 <Button on:click={() => { console.log("clicked") } }>
     <Label>Default</Label>
 </Button>
 
+<!-- FIXME  
+articles to do and to put at the top
+how i work --- also in the menu
+what is c++ for?  -- maybe also in the menU?
+about me is only in the menu instead
+-->
+
 <LayoutGrid>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
-		<div class="demo-cell" style="height: 80px;">
-		  cell 1
-		</div>
+		
+			<StandardLink to={"/article/199/catch-the-tech"}>
+	
+				<StandardCard>
+					<Media class="card-media-16x9" aspectRatio="16x9">
+						<MediaContent>
+							<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg"
+											   alt="now just testing"/>
+						</MediaContent>
+					</Media>
+					<Button on:click={() => { console.log("clicked") } }>
+						<Label>click me</Label>
+					</Button>
+					<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
+				</StandardCard>
+				
+			</StandardLink>
+		
 	</Cell>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
-		<div class="demo-cell" style="height: 80px;">
-		  cell 2
-		</div>
+		
+			<StandardLink to={"http://www.ibm.com"}>
+	
+				<StandardCard>
+					<Media class="card-media-16x9" aspectRatio="16x9">
+						<MediaContent>
+							<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg"
+																alt="now just testing"/>
+						</MediaContent>
+					</Media>
+					<Button on:click={() => { console.log("clicked") } }>
+						<Label>click me</Label>
+					</Button>
+					<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
+				</StandardCard>
+				
+			</StandardLink>
+		
 	</Cell>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
-		<div class="demo-cell" style="height: 80px;">
+		
 		  cell 3
-		</div>
+		
 	</Cell>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
-		<div class="demo-cell" style="height: 80px;">
+		
 		  cell 4
-		</div>
+		
 	</Cell>
 	
 </LayoutGrid>
-
-<!-- <MediaContent>
-	<img height="100%" width="100%" src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg" alt="testing">
-  </MediaContent> -->

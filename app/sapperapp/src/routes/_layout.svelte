@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// import Nav from '../components/Nav.svelte';
 
 	import {APP_CONFIGURATION} from '../appConfiguration';
@@ -9,7 +9,7 @@ import StandardHeader from '../components/headers/StandardHeader.svelte';
 
 // import IconButton from '@smui/icon-button';
 
-	//export let segment;
+	export let segment: string;
 </script>
 
 <style>
@@ -23,15 +23,14 @@ import StandardHeader from '../components/headers/StandardHeader.svelte';
 	}
 </style>
 
-<!-- max-width: 56em; -->
+<!-- This is the variable segment: {segment} -->
 
-
-<!-- var(--font-family); -->
-
-
-<!-- <Nav {segment}/> -->
+<!-- FIXME  why does the header have a space above it? -->
 
 <main style="--max-width: {APP_CONFIGURATION.maxwidthforcontent};"  >
 	<StandardHeader />
 	<slot></slot>
+	footer here
 </main>
+
+<!-- FIXME  footer to do -->

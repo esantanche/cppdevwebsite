@@ -13,24 +13,24 @@ comic is useful
 
 
 <script>
-    // import { APP_CONFIGURATION } from '../../appConfiguration';
+    import { APP_CONFIGURATION } from '../../appConfiguration';
 
     // export let color = undefined;
-    // export let large = undefined;
-    // export let comic = undefined;
+    export let large = undefined;
+    export let comic = undefined;
 
-    
+    // console.log(APP_CONFIGURATION);
 
 </script>
 
 <style>
     .headlinetext {
-        font-family: 'Roboto', sans-serif;
+        font-family: var(--font-family);
         font-weight: 600;
         line-height: 1.15;
         text-align: center;
         color: #000;
-        font-size: 4vw;
+        font-size: var(--font-size);
     }
 </style>
 
@@ -48,7 +48,8 @@ comic is useful
 
 <!-- <svelte:window bind:innerWidth={screenWidth} /> -->
 
-<div class="headlinetext">
+<div class="headlinetext" style="--font-family: {comic ? APP_CONFIGURATION.fontFamilyForComicText : APP_CONFIGURATION.fontFamilyForStandardText};
+                                 --font-size: {large ? "4vw" : "3vw"}">
     <slot></slot>
 </div>
 

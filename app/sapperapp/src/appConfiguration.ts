@@ -10,7 +10,7 @@
 // 56em
 
  export const APP_CONFIGURATION = {
-    maxwidthforcontent: "60em",
+    maxwidthforcontent: "70em",
     defaultColorsTable: {
         "PASTELGREEN": "#C1E1C1",
         "PASTELORANGE": "#FAC898",
@@ -19,6 +19,8 @@
         "DARKGREY": "#264A60",
         "VERYDARKGREY": "#1D3649"
     },
+    fontFamilyForStandardText: "'Roboto', sans-serif",
+    fontFamilyForComicText: "'Comic Neue', cursive",
     responsiveBreakpoints: {
         large: 960,
         medium: 600
