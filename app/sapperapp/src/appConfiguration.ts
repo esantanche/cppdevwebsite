@@ -10,6 +10,7 @@
 // 56em
 
  export const APP_CONFIGURATION = {
+    scaleforpdfviewer: 1.3, 
     maxwidthforcontent: "70em",
     defaultColorsTable: {
         "PASTELGREEN": "#C1E1C1",

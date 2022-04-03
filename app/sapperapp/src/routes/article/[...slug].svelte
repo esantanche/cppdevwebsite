@@ -59,13 +59,12 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	// import FullWidthPane from "../../components/panes/FullWidthPane.svelte";
 
 	import { onMount } from "svelte";
-  let PdfViewer;
+  	let PdfViewer;
 
-  onMount(async () => {
-    const module = await import("svelte-pdf");
-    PdfViewer = module.default;
-  });
-
+	onMount(async () => {
+		const module = await import("svelte-pdf");
+		PdfViewer = module.default;
+	});
 
 	export let dataBundle;
 </script>
@@ -96,12 +95,10 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 
 <SeparatorPane/>
 
-<!-- FIXME  somewhere here there will be the pdf viewer -->
-
-<svelte:component this={PdfViewer} url="https://nearlaw.com/PDF/MumbaiHC/2018/2018(7)-ALL-MR-95.pdf"/>
-
-<!-- <PdfViewer url='Agile and creative activity.pdf' /> -->
-
+{#if dataBundle.article.field_attachment}
+	<svelte:component this={PdfViewer} url={APP_CONFIGURATION.backendUrl + dataBundle.article.field_attachment} scale={APP_CONFIGURATION.scaleforpdfviewer}/>
+	<SeparatorPane/>
+{/if}
 
 <HeadlineText large={false}>
 
