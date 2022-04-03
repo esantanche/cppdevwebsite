@@ -30,6 +30,9 @@ help search engines to index the item's page.
 		if (topicForRestApi === "Problem solving")
 			topicForRestApi = "Talking about my experiences";
 
+		if (topicForRestApi === "Agile and surroundings")
+			topicForRestApi = "Leadership";
+			
 		const res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/EMS/v2/view/articles?_format=json&field_ems_topic_target_id=${topicForRestApi}&page=${page - 1}`);
 
 		if (!res.ok) {
@@ -131,6 +134,8 @@ import CoverFittingImage from "../../components/images/CoverFittingImage.svelte"
 </svelte:head>
 
 <SeparatorPane />
+
+<!-- {titleToSlug("What is C++ for?")} -->
 
 <HeadlineText>{APP_CONFIGURATION.topicURL2topicLookupTable[dataBundle.topic]}</HeadlineText>
 

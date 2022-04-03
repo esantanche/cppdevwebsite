@@ -8,27 +8,18 @@
   import Menu from "@smui/menu";
 
   import List, { Item, Separator, Text } from "@smui/list";
-import StandardLink from "../links/StandardLink.svelte";
 
-import NarrationText from "../texts/NarrationText.svelte";
+  import StandardLink from "../links/StandardLink.svelte";
 
-// import { log } from "console";
-
-  //import {APP_CONFIGURATION} from '../../appConfiguration';
-
-  //import ContentPane from "../panes/ContentPane.svelte";
+  import NarrationText from "../texts/NarrationText.svelte";
 
   let menu: MenuComponentDev;
 
+  // FIXME  this will eventually be removed
   let clicked = "nothing yet";
 </script>
 
 <!-- FIXME  The menu needs adjustments with the drop down list having to get more on the left etc -->
-
-<!-- FIXME  why does the header have a space above it? -->
-
-<!-- FIXME  my name sjhould be clickable and go to the home -->
-
 
 <TopAppBar variant="static" color="secondary">
   <Row>

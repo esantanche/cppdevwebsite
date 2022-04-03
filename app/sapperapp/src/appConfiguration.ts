@@ -37,7 +37,7 @@
         "success-stories": "Success stories",
         "testimonials": "Testimonials",
         "problem-solving": "Problem solving",
-        "leadership": "Leadership",
+        "agile-and-surroundings": "Agile and surroundings",
         "services": "Services"
     },
     fontFamilyForFields: "Roboto, sans-serif",

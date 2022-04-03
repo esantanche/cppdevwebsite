@@ -98,54 +98,98 @@ import StandardCard from '../components/cards/StandardCard.svelte';
 articles to do and to put at the top
 how i work --- also in the menu
 what is c++ for?  -- maybe also in the menU?
+github 
 about me is only in the menu instead
 -->
 
 <!-- FIXME  maybe instead of what is c++ for I write about the tech I use? so that I can add Rust? dunno -->
 
+<!-- <Button on:click={() => { console.log("clicked") } }>
+	<Label>How I work</Label>
+</Button> -->
+
 <LayoutGrid>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
 		
-			<StandardLink to={"/article/199/catch-the-tech"}>
+			<StandardLink to={"/article/273/how-i-work"}>
 	
 				<StandardCard>
 					<Media class="card-media-16x9" aspectRatio="16x9">
 						<MediaContent>
-							<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg"
-											   alt="now just testing"/>
+							<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2022-04/fatos-bytyqi-Agx5_TLsIf4-unsplash-small.jpg"
+											   alt="How I work"/>
 						</MediaContent>
 					</Media>
-					<Button on:click={() => { console.log("clicked") } }>
+					<Button>
 						<Label>How I work</Label>
 					</Button>
-					<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
 				</StandardCard>
 				
 			</StandardLink>
 		
 	</Cell>
+	<!-- what-is-c-for -->
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
 		
-			<StandardLink to={"http://www.ibm.com"}>
+			<StandardLink to={"/article/274/what-is-c-for"}>
 	
 				<StandardCard>
 					<Media class="card-media-16x9" aspectRatio="16x9">
 						<MediaContent>
-							<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2020-05/keith-johnston-3OQk-5DJTEE-unsplash-720x400.jpg"
-																alt="now just testing"/>
+							<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2022-04/C%2B%2B.jpg"
+																alt="What is C++ for?"/>
 						</MediaContent>
 					</Media>
 					<Button on:click={() => { console.log("clicked") } }>
 						<Label>What is C++ for?</Label>
 					</Button>
-					<!-- <Content style="color: #888;">Here's some gray text down here.</Content> -->
 				</StandardCard>
 				
 			</StandardLink>
 		
 	</Cell>
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		
+		<StandardLink to={"https://github.com/esantanche"}>
+
+			<StandardCard>
+				<Media class="card-media-16x9" aspectRatio="16x9">
+					<MediaContent>
+						<CoverFittingImage src="GitHub_Logo.png"
+															alt="My GitHub account"/>
+					</MediaContent>
+				</Media>
+				<Button on:click={() => { console.log("clicked") } }>
+					<Label>My GitHub account</Label>
+				</Button>
+			</StandardCard>
+			
+		</StandardLink>
+	
+	</Cell>
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		
+		<StandardLink to={"/articles/agile-and-surroundings/1"}>
+  
+		  <StandardCard>
+			  <Media class="card-media-16x9" aspectRatio="16x9">
+				  <MediaContent>
+					  <CoverFittingImage src="Agile_and_surroundings.jpg"
+										 alt="Agile_and_surroundings"/>
+				  </MediaContent>
+			  </Media>
+			  <Button on:click={() => { console.log("clicked") } }>
+				  <Label>Agile and surroundings</Label>
+			  </Button>
+		  </StandardCard>
+		  
+	  </StandardLink>
+
+  </Cell>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
 		
@@ -164,8 +208,6 @@ about me is only in the menu instead
 			</StandardCard>
 			
 		</StandardLink>
-
-		
 
 	</Cell>
 
