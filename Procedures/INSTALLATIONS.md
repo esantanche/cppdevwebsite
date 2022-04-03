@@ -67,6 +67,12 @@ Creating CSS from SCSS.
 [esantanche@luna sapperapp]$ npm run prepare
 ```
 
+## Installing Svelte PDF viewer
+
+```bash
+[esantanche@luna sapperapp]$ npm install -D svelte-pdf
+```
+
 ## SvelteKit
 
 (Eventually I didn't use SvelteKit)

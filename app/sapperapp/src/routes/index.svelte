@@ -23,7 +23,10 @@
 	import HeadlineText from '../components/texts/HeadlineText.svelte';
 import StandardCard from '../components/cards/StandardCard.svelte';
 
+
 </script>
+
+
 
 <style>
 
@@ -49,6 +52,8 @@ import StandardCard from '../components/cards/StandardCard.svelte';
 <HeadlineText comic={true}>We developers invented Agile</HeadlineText>
 
 <SeparatorPane />
+
+
 
 
 <!-- <StandardCard>

@@ -32,7 +32,6 @@ help search engines to index the item's page.
        
     </Cell>
 
-
 </LayoutGrid>
 
 <!-- <FullWidthPane shortPadding={true} backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]}>

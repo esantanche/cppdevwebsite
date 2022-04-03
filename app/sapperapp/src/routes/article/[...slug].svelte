@@ -6,6 +6,10 @@ help search engines to index the item's page.
 
 <script context="module">
 
+
+	// import PdfViewer from 'svelte-pdf';
+
+
 	import {APP_CONFIGURATION} from '../../appConfiguration';
 	// import {error_message_from_error} from "../../helpers/errorMessages";
 	// import * as Sentry from '@sentry/browser';
@@ -54,6 +58,15 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	import NarrationText from "../../components/texts/NarrationText.svelte";
 	// import FullWidthPane from "../../components/panes/FullWidthPane.svelte";
 
+	import { onMount } from "svelte";
+  let PdfViewer;
+
+  onMount(async () => {
+    const module = await import("svelte-pdf");
+    PdfViewer = module.default;
+  });
+
+
 	export let dataBundle;
 </script>
 
@@ -84,6 +97,11 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 <SeparatorPane/>
 
 <!-- FIXME  somewhere here there will be the pdf viewer -->
+
+<svelte:component this={PdfViewer} url="https://nearlaw.com/PDF/MumbaiHC/2018/2018(7)-ALL-MR-95.pdf"/>
+
+<!-- <PdfViewer url='Agile and creative activity.pdf' /> -->
+
 
 <HeadlineText large={false}>
 
