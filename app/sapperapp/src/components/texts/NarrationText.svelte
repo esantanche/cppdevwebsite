@@ -9,19 +9,20 @@ help search engines to index the item's page.
 
     export let color = undefined;
     export let centered = false;
+    export let alignright = false;
 
-    let screenWidth;
+    // let screenWidth;
 
-    function fontSize(screenWidth, configuration) {
+    // function fontSize(screenWidth, configuration) {
 
-        if (screenWidth >= configuration.responsiveBreakpoints.large)
-            return "1.35rem";
-        else if (screenWidth >= configuration.responsiveBreakpoints.medium)
-            return "1.2rem";
-        else
-            return "1.1rem";
+    //     if (screenWidth >= configuration.responsiveBreakpoints.large)
+    //         return "1.35rem";
+    //     else if (screenWidth >= configuration.responsiveBreakpoints.medium)
+    //         return "1.2rem";
+    //     else
+    //         return "1.1rem";
 
-    }
+    // }
 </script>
 
 <style>
@@ -30,19 +31,21 @@ help search engines to index the item's page.
         font-family: var(--font-family);
         font-weight: 400;
         color: var(--text-color);
-        font-size: var(--font-size);
-        text-align: var(--centered);
+        font-size: 20px;
+        text-align: var(--aligntext);
     }
+
+    /* font-size: var(--font-size); */
+
 
 </style>
 
-<svelte:window bind:innerWidth={screenWidth} />
+<!-- <svelte:window bind:innerWidth={screenWidth} /> -->
 
 <!-- FIXME  I'm usinig this but it needs a lot of reowrk  -->
 
-<div class="narrationtext" style="--font-family: {APP_CONFIGURATION.fontFamily};
-                                  --text-color: {color ? color : APP_CONFIGURATION.defaultColorsTable['WHITESHADE']};
-                                  --font-size: {fontSize(screenWidth, APP_CONFIGURATION)};
-                                  --centered: {centered ? 'center' : ''}" >
+<div class="narrationtext" style="--font-family: {APP_CONFIGURATION.fontFamilyForStandardText};
+                                  --text-color: {color ? color : APP_CONFIGURATION.defaultColorsTable['VERYDARKGREY']};
+                                  --aligntext: {centered ? 'center' : (alignright ? 'right' : '')}" >
     <slot></slot>
 </div>

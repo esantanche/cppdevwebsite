@@ -9,6 +9,9 @@
 
   import List, { Item, Separator, Text } from "@smui/list";
 import StandardLink from "../links/StandardLink.svelte";
+
+import NarrationText from "../texts/NarrationText.svelte";
+
 // import { log } from "console";
 
   //import {APP_CONFIGURATION} from '../../appConfiguration';
@@ -31,7 +34,7 @@ import StandardLink from "../links/StandardLink.svelte";
   <Row>
     <Section>
       <StandardLink to="/">
-        <Title>Emanuele Santanche</Title>
+        <NarrationText>&nbsp;&nbsp;Emanuele Santanche</NarrationText>
       </StandardLink>
     </Section>
     <Section align="end">

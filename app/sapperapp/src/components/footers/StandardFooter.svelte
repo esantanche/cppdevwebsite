@@ -9,8 +9,8 @@ help search engines to index the item's page.
     import {APP_CONFIGURATION} from '../../appConfiguration';
     // import WideContentPane from "../panes/WideContentPane.svelte";
     // import SpaceBetweenPane from "../panes/SpaceBetweenPane.svelte";
-    // import NarrationText from "../texts/NarrationText.svelte";
-    // import StandardLink from "../links/StandardLink.svelte";
+    import NarrationText from "../texts/NarrationText.svelte";
+    import StandardLink from "../links/StandardLink.svelte";
     // import SeparatorPane from "../panes/SeparatorPane.svelte";
 
     import LayoutGrid, { Cell } from '@smui/layout-grid';
@@ -18,21 +18,31 @@ help search engines to index the item's page.
 </script>
 
 <!-- FIXME  it has to be green -->
-
+<div style={"background-color: " + APP_CONFIGURATION.defaultColorsTable['PASTELGREEN']}>
 <LayoutGrid>
 
     <Cell spanDevices={{ desktop: 6, tablet: 4, phone: 2 }}>
 		
-        half here left
-    
+        <NarrationText>
+            Emanuele Santanche
+        </NarrationText>
+
     </Cell>
 
     <Cell spanDevices={{ desktop: 6, tablet: 4, phone: 2 }} align="end">
-		<p style="text-align: right;"> half here right</p>
+		
+
+        <StandardLink to="/article/58/privacy-policy">
+            
+                <NarrationText alignright={true}>Privacy policy</NarrationText>
+        
+            
+        </StandardLink>
        
     </Cell>
-
 </LayoutGrid>
+</div>
+
 
 <!-- <FullWidthPane shortPadding={true} backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]}>
     <WideContentPane backgroundColor="inherit">

@@ -27,7 +27,7 @@ help search engines to index the item's page.
 
         // FIXME  what about this Tech watch? I changed name, do I need to change here?
 
-		if (topicForRestApi === "Tech watch")
+		if (topicForRestApi === "Problem solving")
 			topicForRestApi = "Talking about my experiences";
 
 		const res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/EMS/v2/view/articles?_format=json&field_ems_topic_target_id=${topicForRestApi}&page=${page - 1}`);

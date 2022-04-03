@@ -96,7 +96,10 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 <SeparatorPane/>
 
 {#if dataBundle.article.field_attachment}
-	<svelte:component this={PdfViewer} url={APP_CONFIGURATION.backendUrl + dataBundle.article.field_attachment} scale={APP_CONFIGURATION.scaleforpdfviewer}/>
+	<svelte:component this={PdfViewer} 
+	                  url={APP_CONFIGURATION.backendUrl + dataBundle.article.field_attachment} 
+	                  scale={APP_CONFIGURATION.scaleforpdfviewer}
+					  flipTime=20/>
 	<SeparatorPane/>
 {/if}
 

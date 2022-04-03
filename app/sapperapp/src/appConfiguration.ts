@@ -8,6 +8,7 @@
 
 // FIXME  everything to fix
 // 56em
+// FIXME  the defaultColorsTable needs cleaning
 
  export const APP_CONFIGURATION = {
     scaleforpdfviewer: 1.3, 
@@ -32,13 +33,12 @@
     // Number of articles in a page of results
     fetchPageSize: 6,
     // What a topic looks like in the url and in headers
-    topicURL2topicLookupTable: {
+    topicURL2topicLookupTable: { 
         "success-stories": "Success stories",
         "testimonials": "Testimonials",
-        "problem-solving": "Tech watch",
+        "problem-solving": "Problem solving",
         "leadership": "Leadership",
         "services": "Services"
     },
-    fontFamily: "Lato, sans-serif",
     fontFamilyForFields: "Roboto, sans-serif",
 };
