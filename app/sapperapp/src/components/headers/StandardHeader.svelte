@@ -21,6 +21,10 @@
 
 <!-- FIXME  The menu needs adjustments with the drop down list having to get more on the left etc -->
 
+<!-- FIXME  and the menu needs links etc -->
+
+<!-- FIXME  the Contact me page is to do or goes to the bottom -->
+
 <TopAppBar variant="static" color="secondary">
   <Row>
     <Section>
@@ -35,7 +39,7 @@
         </IconButton>
         <Menu bind:this={menu} color="secondary">
           <List>
-            <StandardLink to="http://www.ibm.com">
+            <StandardLink to="/article/275/about-me">
               <Item>
                 <Text>About me</Text>
               </Item>

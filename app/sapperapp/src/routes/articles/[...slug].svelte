@@ -173,14 +173,14 @@ import CoverFittingImage from "../../components/images/CoverFittingImage.svelte"
 {#if morePages(dataBundle.page, dataBundle.count, APP_CONFIGURATION.fetchPageSize)}
 
 	<CenteringPane>
-			<StandardLink to={"/articles/" + dataBundle.topic + "/" + (dataBundle.page + 1)}>
-				<!-- <Button>Next</Button> -->
+		<StandardLink to={"/articles/" + dataBundle.topic + "/" + (dataBundle.page + 1)}>
+			<Button variant="outlined">
+				<Label>Next</Label>
+			</Button>
+		</StandardLink>
+	</CenteringPane>
 
-				<Button variant="outlined">
-					<Label>Next</Label>
-				  </Button>
-			</StandardLink>
-		</CenteringPane>
+	<SeparatorPane size="short" />
 
 {/if} 
 
