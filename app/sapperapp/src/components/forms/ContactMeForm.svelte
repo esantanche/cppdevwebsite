@@ -16,11 +16,13 @@ I left it because I didn't want to change everything.
 
     import Icon from '@smui/textfield/icon';
 
+    import HeadlineText from '../../components/texts/HeadlineText.svelte';
+
     // import {error_message_from_error} from "../../helpers/errorMessages";
     // import * as Sentry from '@sentry/browser';
 
     // import StandardButton from "../buttons/StandardButton.svelte";
-    // import SeparatorPane from "../panes/SeparatorPane.svelte";
+    import SeparatorPane from "../panes/SeparatorPane.svelte";
     // import StandardLabel from "../labels/StandardLabel.svelte";
     // import MessageDialog from "../dialogs/MessageDialog.svelte";
     // import CenteringPane from "../panes/CenteringPane.svelte";
@@ -114,9 +116,7 @@ I left it because I didn't want to change everything.
     let Email = '';
     let Name = '';
     let Message = '';
-  let valueB = '';
-  let valueC = '';
-  let valueD = '';
+  
 </script>
 
 <style>
@@ -162,9 +162,35 @@ I left it because I didn't want to change everything.
     padding-left: 32px;
     padding-right: 28px;
   }
+
+  * :global(.fieldsize) {
+    width: 50%;
+  }
+
+  * :global(.textareasize) {
+    width: 100%;
+  }
+
+  /* * :global(.contactmeform) {
+    margin-left: 100px;
+    margin-right: 100px;
+  } */
+
+  .contactmeform {
+    margin: 20px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+  }
+
+
 </style>
 
 <!-- FIXME  once successfully sent the message, clean the form up  -->
+
+<SeparatorPane size="short" />
+
+<HeadlineText>Contact me</HeadlineText>
+
 
 <form
         id="emspickmybrainmessage"
@@ -174,14 +200,12 @@ I left it because I didn't want to change everything.
         on:changed={validateField}
         on:input={validateField}
 
-        
+        class="contactmeform"
 
 >
 
-<!-- type="email" -->
-
     <Textfield
-        class="shaped-outlined"
+        class="shaped-outlined fieldsize"
         variant="outlined"
         bind:value={Name}
         label="Name"   
@@ -193,7 +217,7 @@ I left it because I didn't want to change everything.
     </Textfield>
 
     <Textfield
-        class="shaped-outlined"
+        class="shaped-outlined fieldsize"
         variant="outlined"
         bind:value={Email}
         label="Email"   
@@ -206,7 +230,7 @@ I left it because I didn't want to change everything.
 
     <!-- FIXME  what about an icon here? https://fonts.google.com/icons?selected=Material+Icons&icon.query=message -->
 
-    <Textfield textarea bind:value={Message} label="Message" required>
+    <Textfield class="textareasize" textarea bind:value={Message} label="Message" required>
         <HelperText slot="helper">Your message</HelperText>
     </Textfield>
 
