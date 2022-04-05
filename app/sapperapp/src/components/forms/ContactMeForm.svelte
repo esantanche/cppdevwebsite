@@ -7,7 +7,7 @@ You read "Let me defend you" many times, but it's an old expression.
 I left it because I didn't want to change everything.
 -->
 
-<script>
+<script lang="ts">
     import {APP_CONFIGURATION} from '../../appConfiguration';
 
     import Textfield from '@smui/textfield';
@@ -17,6 +17,10 @@ I left it because I didn't want to change everything.
     import Icon from '@smui/textfield/icon';
 
     import HeadlineText from '../../components/texts/HeadlineText.svelte';
+    
+    import Button, { Label } from '@smui/button';
+
+    import Dialog, { Title, Content, Actions } from '@smui/dialog';
 
     // import {error_message_from_error} from "../../helpers/errorMessages";
     // import * as Sentry from '@sentry/browser';
@@ -34,83 +38,97 @@ I left it because I didn't want to change everything.
 
     async function handleSubmit(event) {
 
-        const message_node_details = {
-            type: [{"target_id": "ems_pick_my_brain_message"}],
-            title: [{"value": "New Message EMSCPP " + event.target.name.value}],
-            field_name: [{"value": event.target.name.value}],
-            field_email: [{"value": event.target.email.value}],
-            field_message: [{"value": event.target.message.value}]
-        };
+      console.log("in handleSubmit");
+      console.log(event);
+      console.log(event.target[0].value);
+      console.log(event.target[1].value);
 
-        const res = await fetch(`${APP_CONFIGURATION.backendUrl}/node?_format=json`, {
-            method: 'POST',
-            body: JSON.stringify(message_node_details),
-            headers: {
-                'Content-Type': 'application/json',
-                'Accepts': 'application/json'
-            }
-        });
+      const message_node_details = {
+          type: [{"target_id": "ems_pick_my_brain_message"}],
+          title: [{"value": "New Message EMSCPP " + event.target[0].value}],
+          field_name: [{"value": event.target[0].value}],
+          field_email: [{"value": event.target[1].value}],
+          field_message: [{"value": event.target[2].value}]
+      };
 
-        if (!res.ok) {
-            console.error("Error in sending message", res);
+      // const res = await fetch(`${APP_CONFIGURATION.backendUrl}/node?_format=json`, {
+      //     method: 'POST',
+      //     body: JSON.stringify(message_node_details),
+      //     headers: {
+      //         'Content-Type': 'application/json',
+      //         'Accepts': 'application/json'
+      //     }
+      // });
 
-            const error_message = error_message_from_error(res);
+      // if (!res.ok) {
 
-            Sentry.captureMessage(error_message);
+        messageDialogItIsAnErrorMessage = false;
+          messageDialogTitle = "Message sent";
+          messageDialogMessage = "Thank you for your message!";
+          messageDialogOpen = true;
 
-            messageDialogItIsAnErrorMessage = true;
-            messageDialogTitle = "Something went wrong";
-            messageDialogMessage = "Please, save your message, reload the page and try again.";
-            messageDialogOpen = true;
+      if (false) {
+          console.error("Error in sending message", res);
 
-        } else {
+          // const error_message = error_message_from_error(res);
 
-            messageDialogItIsAnErrorMessage = false;
-            messageDialogTitle = "Message sent";
-            messageDialogMessage = "Thank you for your message!";
-            messageDialogOpen = true;
+          // Sentry.captureMessage(error_message);
 
-            document.getElementById('letmedefendyouform').reset();
+          messageDialogItIsAnErrorMessage = true;
+          messageDialogTitle = "Something went wrong";
+          messageDialogMessage = "Please, save your message, reload the page and try again.";
+          messageDialogOpen = true;
 
-        }
+      } else {
+
+          console.log("message sent");
+          messageDialogItIsAnErrorMessage = false;
+          messageDialogTitle = "Message sent";
+          messageDialogMessage = "Thank you for your message!";
+          messageDialogOpen = true;
+
+          // FIXME I need trhis!
+          //document.getElementById('emspickmybrainmessage').reset();
+
+      }
 
     }
 
-    function validateField(event) {
-        let field = event.target;
+    // function validateField(event) {
+    //     let field = event.target;
 
-        switch (field.id) {
-            case "name":
-                if (field.value === '') {
-                    field.setCustomValidity('The name is required');
-                } else {
-                    field.setCustomValidity('');
-                }
-                break;
-            case "email":
-                if (field.value === '') {
-                    field.setCustomValidity('The email address is required');
-                } else if (field.validity.typeMismatch) {
-                    field.setCustomValidity('Please enter a valid email address');
-                } else {
-                    field.setCustomValidity('');
-                }
-                break;
-            case "message":
-                if (field.value === '') {
-                    field.setCustomValidity('The message is required');
-                } else {
-                    field.setCustomValidity('');
-                }
-                break;
-            default:
-                const error_message = "Impossible! In validateField I got a field.id that is not managed! field.id=" + field.id;
-                console.error(error_message);
-                Sentry.captureMessage(error_message);
-        }
+    //     switch (field.id) {
+    //         case "name":
+    //             if (field.value === '') {
+    //                 field.setCustomValidity('The name is required');
+    //             } else {
+    //                 field.setCustomValidity('');
+    //             }
+    //             break;
+    //         case "email":
+    //             if (field.value === '') {
+    //                 field.setCustomValidity('The email address is required');
+    //             } else if (field.validity.typeMismatch) {
+    //                 field.setCustomValidity('Please enter a valid email address');
+    //             } else {
+    //                 field.setCustomValidity('');
+    //             }
+    //             break;
+    //         case "message":
+    //             if (field.value === '') {
+    //                 field.setCustomValidity('The message is required');
+    //             } else {
+    //                 field.setCustomValidity('');
+    //             }
+    //             break;
+    //         default:
+    //             const error_message = "Impossible! In validateField I got a field.id that is not managed! field.id=" + field.id;
+    //             console.error(error_message);
+    //             Sentry.captureMessage(error_message);
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 
 
     let Email = '';
@@ -191,20 +209,14 @@ I left it because I didn't want to change everything.
 
 <HeadlineText>Contact me</HeadlineText>
 
-
 <form
         id="emspickmybrainmessage"
-
-        on:submit|preventDefault="{handleSubmit}"
-        on:invalid={validateField}
-        on:changed={validateField}
-        on:input={validateField}
-
+        on:submit|preventDefault="{handleSubmit}"        
         class="contactmeform"
-
 >
 
     <Textfield
+        id="name"
         class="shaped-outlined fieldsize"
         variant="outlined"
         bind:value={Name}
@@ -216,7 +228,10 @@ I left it because I didn't want to change everything.
       <HelperText slot="helper">Your name</HelperText>
     </Textfield>
 
+    <!-- FIXME  the email field gets a white background -->
+
     <Textfield
+        id="email"
         class="shaped-outlined fieldsize"
         variant="outlined"
         bind:value={Email}
@@ -230,40 +245,46 @@ I left it because I didn't want to change everything.
 
     <!-- FIXME  what about an icon here? https://fonts.google.com/icons?selected=Material+Icons&icon.query=message -->
 
-    <Textfield class="textareasize" textarea bind:value={Message} label="Message" required>
-        <HelperText slot="helper">Your message</HelperText>
+    <Textfield 
+        id="message"
+        class="textareasize" 
+        textarea 
+        bind:value={Message} 
+        label="Message" 
+        required
+    >
+      <!-- <Icon class="material-icons" slot="leadingIcon">message</Icon> -->
+      <HelperText slot="helper">Your message</HelperText>
     </Textfield>
 
-    <!-- <pre class="status">Value: {Email}</pre> -->
-
-    <!-- <StandardLabel fieldFor="name">Name</StandardLabel>
-    <SeparatorPane size="veryshort" />
-    <input required type="text" id="name" style="margin-right: 10px"/>
-
-    <SeparatorPane/>
-
-    <StandardLabel fieldFor="email">Email</StandardLabel>
-    <SeparatorPane size="veryshort" />
-    <input required type="email" id="email" />
-
-    <SeparatorPane/>
-
-    <StandardLabel fieldFor="message">Message</StandardLabel>
-    <SeparatorPane size="veryshort" />
-    <textarea required id="message" rows="5" cols="30" />
-
-    <SeparatorPane/>
-
-    <CenteringPane>
-        <StandardButton>
-            Send the message
-        </StandardButton>
-    </CenteringPane> -->
-
+    <Button type="submit" variant="raised">
+      <Label>SEND</Label>
+    </Button>
 
 </form>
 
 <!-- FIXME  SMUI has dialog -->
+
+<Button on:click={() => (messageDialogOpen = true)}>
+  <Label>open dialog</Label>
+</Button>
+
+messageDialogOpen={messageDialogOpen}
+
+<Dialog
+  bind:messageDialogOpen
+  aria-labelledby="simple-title"
+  aria-describedby="simple-content"
+>
+  <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+  <Title id="simple-title">Dialog Title</Title>
+  <Content id="simple-content">Super awesome dialog body text?</Content>
+  <Actions>
+    <Button on:click={() => (messageDialogOpen = false)}>
+      <Label>OK</Label>
+    </Button>
+  </Actions>
+</Dialog>
 
 <!-- 
 {#if messageDialogOpen}

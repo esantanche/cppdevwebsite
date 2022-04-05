@@ -23,9 +23,12 @@ $darkred: color-palette.$red-900;
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield";
 
+@use "@material/dialog";
+
 @use '@material/elevation/mdc-elevation';
 
 @include textfield.core-styles;
+@include dialog.core-styles;
 
 html,
 body {
@@ -46,10 +49,5 @@ a:visited {
 }
 
 input[type=text], input[type=email], textarea {
-	// height: 1.5em;
 	width: 100%;
 }
-
-// textarea {
-// 	width: 100%;
-// }

@@ -31,6 +31,7 @@
     "@rollup/plugin-url": "^5.0.0",
     "@smui/button": "^6.0.0-beta.15",
     "@smui/card": "^6.0.0-beta.15",
+    "@smui/dialog": "^6.0.0-beta.15",
     "@smui/icon-button": "^6.0.0-beta.15",
     "@smui/layout-grid": "^6.0.0-beta.15",
     "@smui/list": "^6.0.0-beta.15",
