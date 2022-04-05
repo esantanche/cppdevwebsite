@@ -2,16 +2,9 @@
 
 @use '@material/theme/color-palette';
 
-// FIXME  do I need these variables?
-
-// FIXME  I could define my variables with my standard colours for example
-
 $pastelgreen: #C1E1C1;
 $pastelorange: #FAC898;
 $darkred: color-palette.$red-900;
-
-// $secondary: #676778,
-
 
 @use '@material/theme/index' as theme with (
   $primary: $darkred,
@@ -23,7 +16,16 @@ $darkred: color-palette.$red-900;
 
 @use '@material/typography/mdc-typography';
 
+// This is from app/sapperapp/node_modules/@material/textfield/README.md
+
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+
 @use '@material/elevation/mdc-elevation';
+
+@include textfield.core-styles;
 
 html,
 body {
@@ -42,3 +44,12 @@ a:visited {
 .mdc-card {
   --mdc-shape-medium: 10px;
 }
+
+input[type=text], input[type=email], textarea {
+	// height: 1.5em;
+	width: 100%;
+}
+
+// textarea {
+// 	width: 100%;
+// }

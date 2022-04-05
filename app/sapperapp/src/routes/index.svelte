@@ -200,9 +200,13 @@ about me is only in the menu instead, and it's to be rewritten
 
     </Cell>
 
+	<!-- FIXME  I need to give a margin to fields -->
+
 	<Cell spanDevices={{ desktop: 12, tablet: 8, phone: 4 }}>
 		
-		<ContactMeForm />
+		<StandardCard>
+			<ContactMeForm />
+		</StandardCard>
 
     </Cell>
 

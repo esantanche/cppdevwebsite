@@ -14,6 +14,8 @@ I left it because I didn't want to change everything.
 
     import HelperText from '@smui/textfield/helper-text';
 
+    import Icon from '@smui/textfield/icon';
+
     // import {error_message_from_error} from "../../helpers/errorMessages";
     // import * as Sentry from '@sentry/browser';
 
@@ -109,7 +111,9 @@ I left it because I didn't want to change everything.
     }
 
 
-    let valueA = '';
+    let Email = '';
+    let Name = '';
+    let Message = '';
   let valueB = '';
   let valueC = '';
   let valueD = '';
@@ -130,6 +134,8 @@ I left it because I didn't want to change everything.
     .emspickmybrainform input:valid, .emspickmybrainform textarea:valid  {
         background-color: #e9fbd0;
     } */
+
+    /* FIXME  do I need this? */
 
   *
     :global(.shaped-outlined
@@ -158,6 +164,8 @@ I left it because I didn't want to change everything.
   }
 </style>
 
+<!-- FIXME  once successfully sent the message, clean the form up  -->
+
 <form
         id="emspickmybrainmessage"
 
@@ -166,21 +174,43 @@ I left it because I didn't want to change everything.
         on:changed={validateField}
         on:input={validateField}
 
+        
+
 >
 
-<Textfield
-      class="shaped-outlined"
-      variant="outlined"
-      bind:value={valueA}
-      label="Email"
-      required
-    >
-      <HelperText slot="helper">Your email</HelperText>
+<!-- type="email" -->
 
-      
+    <Textfield
+        class="shaped-outlined"
+        variant="outlined"
+        bind:value={Name}
+        label="Name"   
+        type="text"     
+        required
+    >
+      <Icon class="material-icons" slot="leadingIcon">perm_identity</Icon>
+      <HelperText slot="helper">Your name</HelperText>
     </Textfield>
 
-    <pre class="status">Value: {valueA}</pre>
+    <Textfield
+        class="shaped-outlined"
+        variant="outlined"
+        bind:value={Email}
+        label="Email"   
+        type="email"     
+        required
+    >
+      <Icon class="material-icons" slot="leadingIcon">email</Icon>
+      <HelperText slot="helper">Your email</HelperText>
+    </Textfield>
+
+    <!-- FIXME  what about an icon here? https://fonts.google.com/icons?selected=Material+Icons&icon.query=message -->
+
+    <Textfield textarea bind:value={Message} label="Message" required>
+        <HelperText slot="helper">Your message</HelperText>
+    </Textfield>
+
+    <!-- <pre class="status">Value: {Email}</pre> -->
 
     <!-- <StandardLabel fieldFor="name">Name</StandardLabel>
     <SeparatorPane size="veryshort" />
