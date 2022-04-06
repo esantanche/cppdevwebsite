@@ -51,3 +51,13 @@ a:visited {
 input[type=text], input[type=email], textarea {
 	width: 100%;
 }
+
+// This is to avoid that chrome changes the background color in fields
+// when using the autofill
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px $pastelorange inset !important;
+    box-shadow: 0 0 0 30px $pastelorange inset !important;
+}

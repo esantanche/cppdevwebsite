@@ -76,9 +76,6 @@ about me is only in the menu instead, and it's to be rewritten
 			</StandardLink>
 		
 	</Cell>
-	<!-- what-is-c-for -->
-
-	<!-- on:click={() => { console.log("clicked") }  -->
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
 		
@@ -200,12 +197,12 @@ about me is only in the menu instead, and it's to be rewritten
 
     </Cell>
 
-	<!-- FIXME  I need to give a margin to fields -->
-
 	<Cell spanDevices={{ desktop: 12, tablet: 8, phone: 4 }}>
 		
 		<StandardCard>
-			<ContactMeForm />
+			<a id="contact-me-form">
+				<ContactMeForm />
+			</a>			
 		</StandardCard>
 
     </Cell>

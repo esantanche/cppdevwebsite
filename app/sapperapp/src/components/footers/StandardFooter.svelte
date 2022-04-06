@@ -5,7 +5,6 @@ help search engines to index the item's page.
 -->
 
 <script>
-    // import FullWidthPane from "../panes/FullWidthPane.svelte";
     import {APP_CONFIGURATION} from '../../appConfiguration';
     // import WideContentPane from "../panes/WideContentPane.svelte";
     // import SpaceBetweenPane from "../panes/SpaceBetweenPane.svelte";
@@ -17,7 +16,6 @@ help search engines to index the item's page.
 
 </script>
 
-<!-- FIXME  it has to be green -->
 <div style={"background-color: " + APP_CONFIGURATION.defaultColorsTable['PASTELGREEN']}>
 <LayoutGrid>
 
@@ -31,36 +29,11 @@ help search engines to index the item's page.
 
     <Cell spanDevices={{ desktop: 6, tablet: 4, phone: 2 }} align="end">
 		
-
         <StandardLink to="/article/58/privacy-policy">
-            
-                <NarrationText alignright={true}>Privacy policy</NarrationText>
-        
-            
+            <NarrationText alignright={true}>Privacy policy</NarrationText>       
         </StandardLink>
        
     </Cell>
 </LayoutGrid>
 </div>
 
-
-<!-- <FullWidthPane shortPadding={true} backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]}>
-    <WideContentPane backgroundColor="inherit">
-        <SpaceBetweenPane>
-            <div>
-                <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
-                    Emanuele Santanché
-                </NarrationText>
-                <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
-                    Leadership coach for technology
-                </NarrationText>
-            </div>
-            <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
-                <StandardLink to="/article/58/privacy-policy">
-                    Privacy policy
-                </StandardLink>
-            </NarrationText>
-        </SpaceBetweenPane>
-    </WideContentPane>
-    <SeparatorPane size="tall" />
-</FullWidthPane> -->

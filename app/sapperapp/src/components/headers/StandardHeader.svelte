@@ -1,4 +1,5 @@
 <script lang="ts">
+
   import type { MenuComponentDev } from "@smui/menu";
 
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
@@ -15,15 +16,7 @@
 
   let menu: MenuComponentDev;
 
-  // FIXME  this will eventually be removed
-  let clicked = "nothing yet";
 </script>
-
-<!-- FIXME  The menu needs adjustments with the drop down list having to get more on the left etc -->
-
-<!-- FIXME  and the menu needs links etc -->
-
-<!-- FIXME  the Contact me page is to do or goes to the bottom -->
 
 <TopAppBar variant="static" color="secondary">
   <Row>
@@ -44,21 +37,36 @@
                 <Text>About me</Text>
               </Item>
             </StandardLink>
-            <Item on:SMUI:action={() => (clicked = "Copy")}>
-              <Text>Contact me</Text>
-            </Item>
-            <Item on:SMUI:action={() => (clicked = "Paste")}>
-              <Text>Success stories</Text>
-            </Item>
-            <Item on:SMUI:action={() => (clicked = "Delete")}>
-              <Text>Testimonials</Text>
-            </Item>
-            <Item on:SMUI:action={() => (clicked = "Delete")}>
-              <Text>Agile and surroundings</Text>
-            </Item>
-            <Item on:SMUI:action={() => (clicked = "Delete")}>
-              <Text>Problem solving</Text>
-            </Item>
+            <StandardLink to="/#contact-me-form">
+              <Item>
+                <Text>Contact me</Text>
+              </Item>
+            </StandardLink>
+            <StandardLink to="/article/273/how-i-work">
+              <Item>
+                <Text>How I work</Text>
+              </Item>
+            </StandardLink>
+            <StandardLink to="/articles/success-stories/1">
+              <Item>
+                <Text>Success stories</Text>
+              </Item>
+            </StandardLink>
+            <StandardLink to="/articles/testimonials/1">
+              <Item>
+                <Text>Testimonials</Text>
+              </Item>
+            </StandardLink>
+            <StandardLink to="/articles/problem-solving/1">
+              <Item>
+                <Text>Problem solving</Text>
+              </Item>
+            </StandardLink>
+            <StandardLink to="/articles/agile-and-surroundings/1">
+              <Item>
+                <Text>Agile and surroundings</Text>
+              </Item>
+            </StandardLink>            
           </List>
         </Menu>
       </div>
