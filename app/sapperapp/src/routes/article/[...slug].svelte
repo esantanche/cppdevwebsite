@@ -6,12 +6,8 @@ help search engines to index the item's page.
 
 <script context="module">
 
-
-	// import PdfViewer from 'svelte-pdf';
-
-
 	import {APP_CONFIGURATION} from '../../appConfiguration';
-	// import {error_message_from_error} from "../../helpers/errorMessages";
+	import {error_message_from_error} from "../../helpers/errorMessages";
 	// import * as Sentry from '@sentry/browser';
 
 	export async function preload({path, params}) {
@@ -24,11 +20,15 @@ help search engines to index the item's page.
 
 			console.error("Error in fetching article", res);
 
-			// const error_message = error_message_from_error(res);
+			// FIXME  this has to be done
+
+			const error_message = error_message_from_error(res);
+
+			console.error("Error in fetching article", error_message);
 
 			// Sentry.captureMessage(error_message);
 
-			// throw new Error(error_message);
+			throw new Error(error_message);
 
 		} else {
 
@@ -50,13 +50,10 @@ help search engines to index the item's page.
 </script>
 
 <script>
-	// import ContentPane from "../../components/panes/ContentPane.svelte";
 	import HeaderImage from "../../components/images/HeaderImage.svelte";
 	import SeparatorPane from "../../components/panes/SeparatorPane.svelte";
-	import Separator from "@smui/list/src/Separator.svelte";
-import HeadlineText from "../../components/texts/HeadlineText.svelte";
+	import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	import NarrationText from "../../components/texts/NarrationText.svelte";
-	// import FullWidthPane from "../../components/panes/FullWidthPane.svelte";
 
 	import { onMount } from "svelte";
   	let PdfViewer;
@@ -73,8 +70,10 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 
 </style>
 
+<!-- The field dataBundle.article.field_header_image and similar start with a backslash, no need
+to add one -->
 
-<!-- <svelte:head>
+<svelte:head>
 	<meta property="og:title" content={dataBundle.article.title} />
 	<meta property="og:image" content={dataBundle.article.field_header_image ?
 		  APP_CONFIGURATION.backendUrl + dataBundle.article.field_header_image :
@@ -82,11 +81,8 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	<meta property='og:description' content={dataBundle.article.field_description} />
 	<meta name=”description” content={dataBundle.article.field_description}>
 	<meta property='og:url' content={APP_CONFIGURATION.homePageUrl + dataBundle.path} />
-	<title>Leadership Coach for Tech, {dataBundle.article.title}</title>
-</svelte:head> -->
-
-
-<!-- FIXME  maybe here I have to give the header image a background color -->
+	<title>Emanuele Santanche, {dataBundle.article.title}</title>
+</svelte:head>
 
 {#if dataBundle.article.field_header_image}
 		<HeaderImage src={APP_CONFIGURATION.backendUrl + dataBundle.article.field_header_image}
@@ -109,42 +105,8 @@ import HeadlineText from "../../components/texts/HeadlineText.svelte";
 
 </HeadlineText>
 
-<!-- FIXME  this needs to be fixed -->
-
-<NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
+<NarrationText>
 
     {@html dataBundle.article.body}
 
 </NarrationText>
-
-
-<!-- 
-<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
-	<SeparatorPane size="tall"/>
-</FullWidthPane>
-
-<ContentPane>
-
-	{#if dataBundle.article.field_header_image}
-		<HeaderImage src={APP_CONFIGURATION.backendUrl + dataBundle.article.field_header_image}
-					 alt={dataBundle.article.title}
-					 backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKGREY"]} />
-	{/if}
-
-	<SeparatorPane />
-
-	<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}
-				  large={true}>
-
-		{dataBundle.article.title}
-
-	</HeadlineText>
-
-	<NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
-
-		{@html dataBundle.article.body}
-
-	</NarrationText>
-
-</ContentPane> -->
-

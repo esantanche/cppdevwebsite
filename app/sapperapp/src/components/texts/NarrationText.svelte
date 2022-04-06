@@ -11,18 +11,6 @@ help search engines to index the item's page.
     export let centered = false;
     export let alignright = false;
 
-    // let screenWidth;
-
-    // function fontSize(screenWidth, configuration) {
-
-    //     if (screenWidth >= configuration.responsiveBreakpoints.large)
-    //         return "1.35rem";
-    //     else if (screenWidth >= configuration.responsiveBreakpoints.medium)
-    //         return "1.2rem";
-    //     else
-    //         return "1.1rem";
-
-    // }
 </script>
 
 <style>
@@ -35,14 +23,7 @@ help search engines to index the item's page.
         text-align: var(--aligntext);
     }
 
-    /* font-size: var(--font-size); */
-
-
 </style>
-
-<!-- <svelte:window bind:innerWidth={screenWidth} /> -->
-
-<!-- FIXME  I'm usinig this but it needs a lot of reowrk  -->
 
 <div class="narrationtext" style="--font-family: {APP_CONFIGURATION.fontFamilyForStandardText};
                                   --text-color: {color ? color : APP_CONFIGURATION.defaultColorsTable['VERYDARKGREY']};
