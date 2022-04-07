@@ -46,15 +46,6 @@
 
 <SeparatorPane />
 
-<!-- FIXME  
-articles to do and to put at the top
-how i work --- also in the menu
-what is c++ for?  -- maybe also in the menU?
-github 
-maybe more tech I can use? javascript, bash, linux, java, react, etc.
-about me is only in the menu instead, and it's to be rewritten
--->
-
 <LayoutGrid>
 
 	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
@@ -110,6 +101,26 @@ about me is only in the menu instead, and it's to be rewritten
 				</Media>
 				<Button>
 					<Label>My GitHub account</Label>
+				</Button>
+			</StandardCard>
+			
+		</StandardLink>
+	
+	</Cell>
+
+	<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 4 }}>
+		
+		<StandardLink to={"/article/282/more-tech-i-can-use"}>
+
+			<StandardCard>
+				<Media class="card-media-16x9" aspectRatio="16x9">
+					<MediaContent>
+						<CoverFittingImage src="https://backend.emanuelesantanche.com/sites/default/files/2022-04/More_tech_I_can_use%20%28small%29.png"
+										   alt="More tech I can use"/>
+					</MediaContent>
+				</Media>
+				<Button>
+					<Label>More tech I can use</Label>
 				</Button>
 			</StandardCard>
 			

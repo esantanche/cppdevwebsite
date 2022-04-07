@@ -135,7 +135,7 @@ import CoverFittingImage from "../../components/images/CoverFittingImage.svelte"
 
 <SeparatorPane />
 
-<!-- {titleToSlug("What is C++ for?")} -->
+<!-- {titleToSlug("More tech I can use")} -->
 
 <HeadlineText>{APP_CONFIGURATION.topicURL2topicLookupTable[dataBundle.topic]}</HeadlineText>
 

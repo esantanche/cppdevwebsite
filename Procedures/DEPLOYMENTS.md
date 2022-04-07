@@ -14,5 +14,14 @@ To deploy the code:
 
 You copy the folder sapperapp directly in the root.
 
-FIXME write what to do for following deployments
+When you deploy changes, you need to copy the folders:
 
+/app/sapperapp/__sapper__/build
+
+and
+
+/app/sapperapp/static
+
+You also have to restart the service:
+
+service emanuelesantanchecom restart
