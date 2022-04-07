@@ -26,7 +26,6 @@
         "success-stories": "Success stories",
         "testimonials": "Testimonials",
         "problem-solving": "Problem solving",
-        "agile-and-surroundings": "Agile and surroundings",
-        "services": "Services"
+        "agile-and-surroundings": "Agile and surroundings"
     }
 };
