@@ -34,6 +34,8 @@ html,
 body {
   background-color: theme.$background;
   color: theme.$on-surface;
+  overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 a {
