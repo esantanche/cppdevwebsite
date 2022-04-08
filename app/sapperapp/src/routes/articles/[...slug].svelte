@@ -156,7 +156,7 @@ import CoverFittingImage from "../../components/images/CoverFittingImage.svelte"
 										   alt={article.title}/>
 					</MediaContent>
 				</Media>
-				<Button on:click={() => { console.log("clicked") } }>
+				<Button>
 					<Label>{article.title}</Label>
 				</Button>
 				
