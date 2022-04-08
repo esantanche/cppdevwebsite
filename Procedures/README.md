@@ -25,4 +25,4 @@ How to install SvelteKit, packages, Svelte material design library, etc.
 
 ## UPDATES.md
 
-FIXME  
+No updates done so far

@@ -11,7 +11,7 @@
 	}
 
 	h1 {
-		font-size: 2.8em;
+		font-size: 1.8em;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
 	}
@@ -22,7 +22,7 @@
 
 	@media (min-width: 480px) {
 		h1 {
-			font-size: 4em;
+			font-size: 2.5em;
 		}
 	}
 </style>
@@ -31,9 +31,21 @@
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+{#if status === 404}
+	<h1>Sorry, we couldn't find the page you are looking for.</h1>
 
-<p>{error.message}</p>
+	<p>You may want to restart from the <a href="/">home</a>.</p>
+{:else}
+	<h1>Sorry, there has been a problem. Please reload the page.</h1>
+
+	<p>Status: {status}</p>
+
+	<p>Error message: {error.message}</p>
+{/if}
+
+{#if dev}
+	<p>This is a development environment</p>
+{/if}
 
 {#if dev && error.stack}
 	<pre>{error.stack}</pre>
