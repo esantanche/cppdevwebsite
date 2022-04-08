@@ -22,8 +22,7 @@ I left it because I didn't want to change everything.
 
     import Dialog, { Title, Content, Actions } from '@smui/dialog';
 
-    // import {error_message_from_error} from "../../helpers/errorMessages";
-    // import * as Sentry from '@sentry/browser';
+    import {error_message_from_error} from "../../helpers/errorMessages";
 
     import SeparatorPane from "../panes/SeparatorPane.svelte";
 
@@ -53,9 +52,10 @@ I left it because I didn't want to change everything.
 
       if (!res.ok) {
           
-          // FIXME to do const error_message = error_message_from_error(res);
 
-          // FIXME to do  Sentry.captureMessage(error_message);
+          const error_message = error_message_from_error(res);
+
+			    console.error("Error in fetching article", error_message);
 
           messageDialogTitle = "Something went wrong";
           messageDialogMessage = "Please, save your message, reload the page and try again.";

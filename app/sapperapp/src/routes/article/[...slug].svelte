@@ -8,7 +8,7 @@ help search engines to index the item's page.
 
 	import {APP_CONFIGURATION} from '../../appConfiguration';
 	import {error_message_from_error} from "../../helpers/errorMessages";
-	// import * as Sentry from '@sentry/browser';
+	
 
 	export async function preload({path, params}) {
 
@@ -20,13 +20,9 @@ help search engines to index the item's page.
 
 			console.error("Error in fetching article", res);
 
-			// FIXME  this has to be done
-
 			const error_message = error_message_from_error(res);
 
 			console.error("Error in fetching article", error_message);
-
-			// Sentry.captureMessage(error_message);
 
 			throw new Error(error_message);
 

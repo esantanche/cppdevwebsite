@@ -1,16 +1,12 @@
 <!--
-@file FIXME 87gts455f Utility function to convert a title to a slug.
-The title belongs to an item. The slug is what we add to the url of the item to
-help search engines to index the item's page.
+@file FIXME 
 -->
 
 <script context="module">
 
 	import {APP_CONFIGURATION} from '../../appConfiguration';
 	import {titleToSlug} from '../../helpers/title_to_slug';
-	// import {backgroundColor} from '../../helpers/background_color';
-	// import {error_message_from_error} from "../../helpers/errorMessages";
-	// import * as Sentry from '@sentry/browser';
+	import {error_message_from_error} from "../../helpers/errorMessages";
 
 	export async function preload({params}) {
 
@@ -21,29 +17,28 @@ help search engines to index the item's page.
 		else
 			page = parseInt(page);
 
-		// FIXME  topics may need change, like tech-watch, which is now different
-
 		let topicForRestApi = APP_CONFIGURATION.topicURL2topicLookupTable[topic];
 
-        // FIXME  what about this Tech watch? I changed name, do I need to change here?
+		switch (topicForRestApi) {
+			case "Problem solving":
+				topicForRestApi = "Talking about my experiences";
+				break;			
+			case "Agile and surroundings":
+				topicForRestApi = "Leadership";
+				break;
+		}
 
-		if (topicForRestApi === "Problem solving")
-			topicForRestApi = "Talking about my experiences";
-
-		if (topicForRestApi === "Agile and surroundings")
-			topicForRestApi = "Leadership";
-			
 		const res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/EMS/v2/view/articles?_format=json&field_ems_topic_target_id=${topicForRestApi}&page=${page - 1}`);
 
 		if (!res.ok) {
 
 			console.error("Error in fetching articles list", res);
 
-			// const error_message = error_message_from_error(res);
+			const error_message = error_message_from_error(res);
 
-			// Sentry.captureMessage(error_message);
+			console.error("Error in fetching article", error_message);
 
-			// throw new Error(error_message);
+			throw new Error(error_message);
 
 		} else {
 
@@ -66,7 +61,6 @@ help search engines to index the item's page.
 </script>
 
 <script>
-	// import WideContentPane from "../../components/panes/WideContentPane.svelte";
 	import StandardLink from "../../components/links/StandardLink.svelte";
 	import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	import StandardCard from '../../components/cards/StandardCard.svelte';
@@ -77,42 +71,20 @@ help search engines to index the item's page.
     				Media,
     				MediaContent,
   			} from '@smui/card';
-	// import ColumnsPane from "../../components/panes/ColumnsPane.svelte";
-	// import ColoredPane from "../../components/panes/ColoredPane.svelte";
-	// import OneThirdHeightPane from "../../components/panes/OneThirdHeightPane.svelte";
-	// import CoverFittingImage from "../../components/images/CoverFittingImage.svelte";
-	// import CentredTextBox from "../../components/boxes/CentredTextBox.svelte";
+
 	import CenteringPane from "../../components/panes/CenteringPane.svelte";
-	// import MarginTopPane from "../../components/panes/MarginTopPane.svelte";
 	import SeparatorPane from "../../components/panes/SeparatorPane.svelte";
-// import LayoutGrid from "@smui/layout-grid/src/LayoutGrid.svelte";
 
-import Button, { Label } from '@smui/button';
+	import Button, { Label } from '@smui/button';
 
+	import LayoutGrid, { Cell } from '@smui/layout-grid';
 
-import LayoutGrid, { Cell } from '@smui/layout-grid';
-
-import CoverFittingImage from "../../components/images/CoverFittingImage.svelte";
-
-	// import StandardButton from "../../components/buttons/StandardButton.svelte";
-	// import FullWidthPane from "../../components/panes/FullWidthPane.svelte";
+	import CoverFittingImage from "../../components/images/CoverFittingImage.svelte";
 
 	export let dataBundle;
 
 	let screenWidth;
      
-
-	// let articles_pairs;
-
-	// $: articles_pairs = dataBundle.articles.reduce((articles_pairs, article, index, articles) => {
-
-	// 	if (index % 2 === 0)
-	// 		articles_pairs.push(articles.slice(index, index + 2));
-
-	// 	return articles_pairs;
-
-	// }, []);
-
 	/**
 	 * FIXME just docs
 	 * page starts from 1
@@ -135,13 +107,9 @@ import CoverFittingImage from "../../components/images/CoverFittingImage.svelte"
 
 <SeparatorPane />
 
-<!-- {titleToSlug("More tech I can use")} -->
-
 <HeadlineText>{APP_CONFIGURATION.topicURL2topicLookupTable[dataBundle.topic]}</HeadlineText>
 
 <LayoutGrid>
-
-<!-- FIXME  if an article has a title on two lines, space is needed above and below -->
 
 {#each dataBundle.articles as article}
 
@@ -183,107 +151,3 @@ import CoverFittingImage from "../../components/images/CoverFittingImage.svelte"
 	<SeparatorPane size="short" />
 
 {/if} 
-
-<!-- {#if morePages(dataBundle.page, dataBundle.count, APP_CONFIGURATION.fetchPageSize)}
-
-	<CenteringPane>
-		<MarginTopPane>
-			<StandardLink to={"/articles/" + dataBundle.topic + "/" + (dataBundle.page + 1)}>
-				<StandardButton>Next</StandardButton>
-			</StandardLink>
-		</MarginTopPane>
-		<SeparatorPane size="short" />
-	</CenteringPane>
-
-{/if} -->
-
-<!-- <svelte:window bind:innerWidth={screenWidth} /> -->
-
-
-<!-- <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
-	<SeparatorPane size="tall"/>
-</FullWidthPane>
-
-<WideContentPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
-	<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}
-				  large={true}>
-
-		<span>{APP_CONFIGURATION.topicURL2topicLookupTable[dataBundle.topic]}</span>
-
-	</HeadlineText>
-</WideContentPane>
-
-<WideContentPane>
-
-	{#each articles_pairs as pair_of_articles, index}
-
-		<ColumnsPane>
-
-			<span slot="left">
-
-				<StandardLink to={"/article/" + pair_of_articles[0].nid + "/" + titleToSlug(pair_of_articles[0].title)}>
-
-					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, index)}>
-
-						<OneThirdHeightPane>
-
-							<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_articles[0].field_image}
-											   alt={pair_of_articles[0].title}/>
-
-						</OneThirdHeightPane>
-
-						<CentredTextBox size="short">
-							<HeadlineText>{pair_of_articles[0].title}</HeadlineText>
-						</CentredTextBox>
-
-					</ColoredPane>
-
-				</StandardLink>
-
-			</span>
-
-			<span slot="right">
-
-				{#if pair_of_articles.length === 2}
-
-					<StandardLink to={"/article/" + pair_of_articles[1].nid + "/" + titleToSlug(pair_of_articles[1].title)}>
-
-						<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, index)}>
-
-							<OneThirdHeightPane>
-
-								<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_articles[1].field_image}
-												   alt={pair_of_articles[1].title}/>
-
-							</OneThirdHeightPane>
-
-							<CentredTextBox size="short">
-								<HeadlineText>{pair_of_articles[1].title}</HeadlineText>
-							</CentredTextBox>
-
-						</ColoredPane>
-
-					</StandardLink>
-
-				{/if}
-			</span>
-
-		</ColumnsPane>
-
-	{/each}
-
-</WideContentPane>
-
-{#if morePages(dataBundle.page, dataBundle.count, APP_CONFIGURATION.fetchPageSize)}
-
-	<CenteringPane>
-		<MarginTopPane>
-			<StandardLink to={"/articles/" + dataBundle.topic + "/" + (dataBundle.page + 1)}>
-				<StandardButton>Next</StandardButton>
-			</StandardLink>
-		</MarginTopPane>
-		<SeparatorPane size="short" />
-	</CenteringPane>
-
-{/if}
- -->
