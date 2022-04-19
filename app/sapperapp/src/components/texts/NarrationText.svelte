@@ -21,6 +21,8 @@ help search engines to index the item's page.
         color: var(--text-color);
         font-size: 20px;
         text-align: var(--aligntext);
+        margin-right: 10px;
+        margin-left: 10px;
     }
 
 </style>

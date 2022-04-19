@@ -7,7 +7,7 @@ help search engines to index the item's page.
 <script>
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
-    export let large = undefined;
+    // useless export let large = undefined;
     export let comic = undefined;
 
 </script>
@@ -19,11 +19,21 @@ help search engines to index the item's page.
         line-height: 1.15;
         text-align: center;
         color: #000;
-        font-size: var(--font-size);
+        font-size: 2.5em;
+        margin-right: 10px; 
+        margin-left:10px;
     }
+
+     /* FIXME this neds fixing */
+
+	/* @media (max-width: 600px) {
+		.headlinetext {
+			font-size: 2.5em;
+		}
+	} */
+
 </style>
 
-<div class="headlinetext" style="--font-family: {comic ? APP_CONFIGURATION.fontFamilyForComicText : APP_CONFIGURATION.fontFamilyForStandardText};
-                                 --font-size: {large ? "4vw" : "3vw"}">
+<div class="headlinetext" style="--font-family: {comic ? APP_CONFIGURATION.fontFamilyForComicText : APP_CONFIGURATION.fontFamilyForStandardText};">
     <slot></slot>
 </div>

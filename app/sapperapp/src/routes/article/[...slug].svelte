@@ -95,11 +95,13 @@ to add one -->
 	<SeparatorPane/>
 {/if}
 
-<HeadlineText large={false}>
+<HeadlineText>
 
 	{dataBundle.article.title}
+	<SeparatorPane/>
 
 </HeadlineText>
+
 
 <NarrationText>
 
