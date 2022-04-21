@@ -23,15 +23,6 @@ help search engines to index the item's page.
         margin-right: 10px; 
         margin-left:10px;
     }
-
-     /* FIXME this neds fixing */
-
-	/* @media (max-width: 600px) {
-		.headlinetext {
-			font-size: 2.5em;
-		}
-	} */
-
 </style>
 
 <div class="headlinetext" style="--font-family: {comic ? APP_CONFIGURATION.fontFamilyForComicText : APP_CONFIGURATION.fontFamilyForStandardText};">
