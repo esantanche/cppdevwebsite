@@ -30,7 +30,7 @@
         <IconButton class="material-icons" on:click={() => menu.setOpen(true)}>
           menu
         </IconButton>
-        <Menu bind:this={menu} color="secondary" style="right: 0px;">
+        <Menu bind:this={menu} color="secondary" style="right: 0px; left: auto;">
           <List>
             <StandardLink to="/article/275/about-me">
               <Item>
