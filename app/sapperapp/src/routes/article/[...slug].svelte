@@ -90,21 +90,21 @@ to add one -->
 
 <SeparatorPane/>
 
-{#if dataBundle.article.field_attachment}
+<!-- {#if dataBundle.article.field_attachment}
 	<svelte:component this={PdfViewer} 
-	                  url="./AgileAndCreativeActivityNew.pdf"
+	                  url="AgileAndCreativeActivityNew.pdf"
 	                  scale={APP_CONFIGURATION.scaleforpdfviewer}
 					  flipTime=20/>
 	<SeparatorPane/>
-{/if}
+{/if} -->
 
-<!-- {#if dataBundle.article.field_attachment}
+{#if dataBundle.article.field_attachment}
 	<svelte:component this={PdfViewer} 
 	                  url={APP_CONFIGURATION.backendUrl + dataBundle.article.field_attachment} 
 	                  scale={APP_CONFIGURATION.scaleforpdfviewer}
 					  flipTime=20/>
 	<SeparatorPane/>
-{/if} -->
+{/if}
 
 
 <HeadlineText>
