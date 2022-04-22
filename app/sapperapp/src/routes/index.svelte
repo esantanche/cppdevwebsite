@@ -1,3 +1,7 @@
+<!--
+@file Home page
+-->
+
 <script lang="ts">
 	
 	import Card, {

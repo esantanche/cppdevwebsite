@@ -1,3 +1,7 @@
+<!--
+@file Error message in case something goes wrong or there is a 404
+-->
+
 <script lang="ts">
 	export let status: number;
 	export let error: Error;

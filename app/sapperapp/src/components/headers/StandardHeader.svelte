@@ -1,3 +1,7 @@
+<!--
+@file The header of the page
+-->
+
 <script lang="ts">
 
   import type { MenuComponentDev } from "@smui/menu";

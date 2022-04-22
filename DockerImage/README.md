@@ -1,3 +1,5 @@
+(I didn't use Docker eventually)
+
 # Creating the Docker image
 
 In this folder I create the Docker image I need to then create a container

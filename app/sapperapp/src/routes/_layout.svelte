@@ -1,3 +1,7 @@
+<!--
+@file Layout of the page
+-->
+
 <script lang="ts">
 
 	import {APP_CONFIGURATION} from '../appConfiguration';

@@ -1,3 +1,7 @@
+<!--
+@file The cards that link to articles or topics
+-->
+
 <script lang="ts">
 	
 	import Card, {

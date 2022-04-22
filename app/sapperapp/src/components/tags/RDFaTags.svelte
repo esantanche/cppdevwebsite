@@ -1,5 +1,5 @@
 <!--
-@file FIXME
+@file Implementation of RDFa tags
 -->
 
 <section vocab="http://schema.org/" typeof="Service">

@@ -1,5 +1,4 @@
 /**
- * FIXME 
  * Configuration parameters for the entire application
  *
  * @see sitemap When the table topicURL2topicLookupTable changes, the sitemap may change

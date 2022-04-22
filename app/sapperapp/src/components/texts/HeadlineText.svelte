@@ -1,13 +1,10 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
-The title belongs to an item. The slug is what we add to the url of the item to
-help search engines to index the item's page.
+@file Text for headlines
 -->
 
 <script>
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
-    // useless export let large = undefined;
     export let comic = undefined;
 
 </script>

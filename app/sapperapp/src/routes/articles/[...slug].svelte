@@ -1,5 +1,5 @@
 <!--
-@file FIXME 
+@file This shows a list of articles related to a topic 
 -->
 
 <script context="module">
