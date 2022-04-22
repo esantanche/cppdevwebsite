@@ -8,8 +8,6 @@ help search engines to index the item's page.
 
 	import {APP_CONFIGURATION} from '../../appConfiguration';
 	import {error_message_from_error} from "../../helpers/errorMessages";
-	
-	// import PdfViewer from 'svelte-pdf';
 
 	export async function preload({path, params}) {
 
@@ -52,8 +50,6 @@ help search engines to index the item's page.
 	import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	import NarrationText from "../../components/texts/NarrationText.svelte";
 
-	
-
 	import { onMount } from "svelte";
   	let PdfViewer;
 
@@ -90,22 +86,13 @@ to add one -->
 
 <SeparatorPane/>
 
-<!-- {#if dataBundle.article.field_attachment}
+{#if dataBundle.article.field_attachment_file_name}
 	<svelte:component this={PdfViewer} 
-	                  url="AgileAndCreativeActivityNew.pdf"
-	                  scale={APP_CONFIGURATION.scaleforpdfviewer}
-					  flipTime=20/>
-	<SeparatorPane/>
-{/if} -->
-
-{#if dataBundle.article.field_attachment}
-	<svelte:component this={PdfViewer} 
-	                  url={APP_CONFIGURATION.backendUrl + dataBundle.article.field_attachment} 
+	                  url={APP_CONFIGURATION.homePageUrl + "/" + dataBundle.article.field_attachment_file_name}
 	                  scale={APP_CONFIGURATION.scaleforpdfviewer}
 					  flipTime=20/>
 	<SeparatorPane/>
 {/if}
-
 
 <HeadlineText>
 
